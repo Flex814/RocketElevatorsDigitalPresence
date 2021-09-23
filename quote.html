@@ -271,25 +271,28 @@
               </div>
               <!-- /Alert Mandatory -->
 
-              <form
-                action="php/contact.php"
+              <!-- Removed php contact here-->
+
+              <!--</form>action="php/contact.php"
                 method="post"
-                enctype="multipart/form-data"
-              >
+                enctype="multipart/form-data">-->
+              <form>
                 <fieldset>
                   <input type="hidden" name="action" value="contact_send" />
 
                   <div class="row">
                     <div class="col-md-4">
-                      <label for="contact:name">Full Name *</label>
-                      <input
-                        required
-                        type="text"
-                        value=""
-                        class="form-control"
-                        name="contact[name][required]"
-                        id="contact:name"
-                      />
+                      <label for="buildingType">Building Type *</label>
+                      <select
+                        class="form-control pointer"
+                        name="contact[department]"
+                      >
+                        <option value="">--- Select ---</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Hybrid">Hybrid</option>
+                      </select>
                     </div>
                     <div class="col-md-4">
                       <label for="contact:email">E-mail Address *</label>
@@ -400,11 +403,18 @@
 								  h-550
 								  h-600
 							  -->
-              <div id="map2" class="h-400 grayscale"></div>
 
               <hr />
 
               <p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5158879660034!2d-73.56930918444276!3d45.459410779100956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x320cd8b1b79bec0f!2s4468%20Wellington%20St%20Suite%20204%2C%20Verdun%2C%20QC%20H4G%201W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1632402509360!5m2!1sen!2sus"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
                 <span class="block"
                   ><strong><i class="fa fa-map-marker"></i> Address:</strong>
                   4468 Wellington St Suite 204, Verdun, Quebec H4G 1W5</span
@@ -526,6 +536,8 @@
     <script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
     <script src="assets/js/scripts.js"></script>
+
+    <script src="quoteScript.js"></script>
 
     <!-- STYLESWITCHER - REMOVE -->
     <script async src="demo_files/styleswitcher/styleswitcher.js"></script>
