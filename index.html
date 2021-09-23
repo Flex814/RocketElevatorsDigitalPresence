@@ -1743,7 +1743,9 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary">
+                    <button 
+                    onclick="buttonAlert()"
+                    class="btn btn-primary">
                       <i class="fa fa-check"></i> SEND MESSAGE
                     </button>
                   </div>
@@ -1886,6 +1888,13 @@
     <script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
     <script src="assets/js/scripts.js"></script>
+
+    <!-- Added script for button alert on button press in form-->
+    <script>
+      function buttonAlert() {
+        alert("Message Sent!");
+      }
+    </script>
 
     <!-- STYLESWITCHER - REMOVE -->
     <script async src="demo_files/styleswitcher/styleswitcher.js"></script>
