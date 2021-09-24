@@ -287,6 +287,7 @@
                       <select
                         class="form-control pointer"
                         name="contact[department]"
+                        id="buildingType"
                       >
                         <option value="">--- Select ---</option>
                         <option value="Residential">Residential</option>
@@ -297,355 +298,367 @@
                     </div>
                   </div>
                   <!--Residential Options-->
-                  <!--Number of apartments-->
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label for="residentialApartments"
-                        >Number of apartments *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[residentialApartments][required]"
-                        id="residentialApartments"
-                      />
+                  <div id="residentialOptions">
+                    <!--Number of apartments-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="residentialApartments"
+                          >Number of apartments *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[residentialApartments][required]"
+                          id="residentialApartments"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of floors-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="residentialFloors"
+                          >Number of floors contained in the building, excluding
+                          basements *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[residentialFloors][required]"
+                          id="residentialFloors"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of basements-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="residentialBasements"
+                          >Number of basements *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[residentialBasements][required]"
+                          id="residentialBasements"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <!--Number of floors-->
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label for="residentialFloors"
-                        >Number of floors contained in the building, excluding
-                        basements *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[residentialFloors][required]"
-                        id="residentialFloors"
-                      />
+
+                  <!--/Residential Options-->
+
+                  <!--Commercial Options-->
+                  <div id="commercialOptions">
+                    <!--Number of distinct businesses-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="commercialBusinesses"
+                          >Number of distinct businesses *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[commercialBusinesses][required]"
+                          id="commercialBusinesses"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of floors-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="commercialFloors"
+                          >Number of floors in the building, excluding basements
+                          *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[commercialFloors][required]"
+                          id="commercialFloors"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of basements-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="commercialBasements"
+                          >Number of basements contained in the building
+                          *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[commercialBasements][required]"
+                          id="commercialBasements"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of parking spaces-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="commercialParking"
+                          >Number of parking space available *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[commercialParking][required]"
+                          id="commercialParking"
+                        />
+                      </div>
+                    </div>
+                    <!--Number of elevator cages-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="commercialElevator"
+                          >Number of elevator cages to be deployed *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[commercialElevator][required]"
+                          id="commercialElevator"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <!--Number of basements-->
+                  <!--/Commercial Options-->
+
+                  <!-- Corporate Options-->
+                  <div id="corporateOptions">
+                    <!-- Number of tenant companies-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="corporateTenant"
+                          >Number of separate tenant companies *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[corporateTenant][required]"
+                          id="corporateTenant"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of floors-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="corporateFloors"
+                          >Number of floors contained in the building, excluding
+                          basements *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[corporateFloors][required]"
+                          id="corporateFloors"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of basements-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="corporateBasements"
+                          >Number of basements contained in the building
+                          *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[corporateBasements][required]"
+                          id="corporateBasements"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of parking spaces-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="corporateParking"
+                          >Number of parking spaces available *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[corporateParking][required]"
+                          id="corporateParking"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of occupants-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="corporateOccupants"
+                          >Maximum number of occupants per floor *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[corporateOccupants][required]"
+                          id="corporateOccupants"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Corporate Options-->
+
+                  <!-- Hybrid Options-->
+                  <div id="hybridOptions">
+                    <!-- Number of distinct businesses-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridBusinesses"
+                          >Number of distinct businesses *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[hybridBusinesses][required]"
+                          id="hybridBusinesses"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of floors-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridFloors"
+                          >Number of floors contained in the building, excluding
+                          basements *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[hybridFloors][required]"
+                          id="hybridFloors"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of basements-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridBasements"
+                          >Number of basements contained in the building
+                          *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[hybridBasements][required]"
+                          id="hybridBasements"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of parking spaces available-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridParking"
+                          >Number of parking spaces available *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[hybridParking][required]"
+                          id="hybridParking"
+                        />
+                      </div>
+                    </div>
+                    <!-- Max number of occupants -->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridMax"
+                          >Maximum number of occupants per floor *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          class="form-control"
+                          name="contact[hybridMax][required]"
+                          id="hybridMax"
+                        />
+                      </div>
+                    </div>
+                    <!-- Number of hours of activity-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="hybridActivity"
+                          >Number of hours of activity of the building *</label
+                        >
+                        <input
+                          required
+                          type="number"
+                          value=""
+                          min="0"
+                          max="24"
+                          class="form-control"
+                          name="contact[hybridActivity][required]"
+                          id="hybridActivity"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Hybrid Options-->
+
+                  <!-- Send Message -->
+                  <br />
                   <div class="row">
-                    <div class="col-md-3">
-                      <label for="residentialBasements"
-                        >Number of basements *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[residentialBasements][required]"
-                        id="residentialBasements"
-                      />
+                    <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-check"></i> SEND MESSAGE
+                      </button>
                     </div>
                   </div>
                 </fieldset>
-                <!--/Residential Options-->
-
-                <!--Commercial Options-->
-                <!--Number of distinct businesses-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="commercialBusinesses"
-                      >Number of distinct businesses *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[commercialBusinesses][required]"
-                      id="commercialBusinesses"
-                    />
-                  </div>
-                </div>
-                <!--Number of floors-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="commercialFloors"
-                      >Number of floors in the building, excluding basements
-                      *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[commercialFloors][required]"
-                      id="commercialFloors"
-                    />
-                  </div>
-                </div>
-                <!--Number of basements-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="commercialBasements"
-                      >Number of basements contained in the building *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[commercialBasements][required]"
-                      id="commercialBasements"
-                    />
-                  </div>
-                </div>
-                <!--Number of parking spaces-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="commercialParking"
-                      >Number of parking space available *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[commercialParking][required]"
-                      id="commercialParking"
-                    />
-                  </div>
-                </div>
-                <!--Number of elevator cages-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="commercialElevator"
-                      >Number of elevator cages to be deployed *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[commercialElevator][required]"
-                      id="commercialElevator"
-                    />
-                  </div>
-                </div>
-
-                <!--/Commercial Options-->
-
-                <!-- Corporate Options-->
-                <!-- Number of tenant companies-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="corporateTenant"
-                      >Number of separate tenant companies *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[corporateTenant][required]"
-                      id="corporateTenant"
-                    />
-                  </div>
-                </div>
-                <!-- Number of floors-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="corporateFloors"
-                      >Number of floors contained in the building, excluding
-                      basements *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[corporateFloors][required]"
-                      id="corporateFloors"
-                    />
-                  </div>
-                </div>
-                <!-- Number of basements-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="corporateBasements"
-                      >Number of basements contained in the building *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[corporateBasements][required]"
-                      id="corporateBasements"
-                    />
-                  </div>
-                </div>
-                <!-- Number of parking spaces-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="corporateParking"
-                      >Number of parking spaces available *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[corporateParking][required]"
-                      id="corporateParking"
-                    />
-                  </div>
-                </div>
-                <!-- Number of occupants-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="corporateOccupants"
-                      >Maximum number of occupants per floor *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[corporateOccupants][required]"
-                      id="corporateOccupants"
-                    />
-                  </div>
-                </div>
-                <!-- /Corporate Options-->
-
-                <!-- Hybrid Options-->
-                <!-- Number of distinct businesses-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridBusinesses"
-                      >Number of distinct businesses *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[hybridBusinesses][required]"
-                      id="hybridBusinesses"
-                    />
-                  </div>
-                </div>
-                <!-- Number of floors-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridFloors"
-                      >Number of floors contained in the building, excluding
-                      basements *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[hybridFloors][required]"
-                      id="hybridFloors"
-                    />
-                  </div>
-                </div>
-                <!-- Number of basements-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridBasements"
-                      >Number of basements contained in the building *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[hybridBasements][required]"
-                      id="hybridBasements"
-                    />
-                  </div>
-                </div>
-                <!-- Number of parking spaces available-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridParking"
-                      >Number of parking spaces available *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[hybridParking][required]"
-                      id="hybridParking"
-                    />
-                  </div>
-                </div>
-                <!-- Max number of occupants -->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridMax"
-                      >Maximum number of occupants per floor *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      class="form-control"
-                      name="contact[hybridMax][required]"
-                      id="hybridMax"
-                    />
-                  </div>
-                </div>
-                <!-- Number of hours of activity-->
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="hybridActivity"
-                      >Number of hours of activity of the building *</label
-                    >
-                    <input
-                      required
-                      type="number"
-                      value=""
-                      min="0"
-                      max="24"
-                      class="form-control"
-                      name="contact[hybridActivity][required]"
-                      id="hybridActivity"
-                    />
-                  </div>
-                </div>
-                <!-- /Hybrid Options-->
-
-                <!-- Send Message -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">
-                      <i class="fa fa-check"></i> SEND MESSAGE
-                    </button>
-                  </div>
-                </div>
               </form>
             </div>
             <!-- /FORM -->
