@@ -201,7 +201,8 @@
             <!-- FORM -->
             <div class="col-md-8">
               <h3>
-                Drop us a line or just say <strong><em>Hello!</em></strong>
+                Please select a <strong><em>Building Type</em></strong> to get
+                started!
               </h3>
 
               <!--
@@ -279,9 +280,9 @@
               <form>
                 <fieldset>
                   <input type="hidden" name="action" value="contact_send" />
-
+                  <!-- Building type-->
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label for="buildingType">Building Type *</label>
                       <select
                         class="form-control pointer"
@@ -294,86 +295,350 @@
                         <option value="Hybrid">Hybrid</option>
                       </select>
                     </div>
-                    <div class="col-md-4">
-                      <label for="contact:email">E-mail Address *</label>
-                      <input
-                        required
-                        type="email"
-                        value=""
-                        class="form-control"
-                        name="contact[email][required]"
-                        id="contact:email"
-                      />
-                    </div>
-                    <div class="col-md-4">
-                      <label for="contact:phone">Phone</label>
-                      <input
-                        type="text"
-                        value=""
-                        class="form-control"
-                        name="contact[phone]"
-                        id="contact:phone"
-                      />
-                    </div>
                   </div>
+                  <!--Residential Options-->
+                  <!--Number of apartments-->
                   <div class="row">
-                    <div class="col-md-8">
-                      <label for="contact:subject">Subject *</label>
-                      <input
-                        required
-                        type="text"
-                        value=""
-                        class="form-control"
-                        name="contact[subject][required]"
-                        id="contact:subject"
-                      />
-                    </div>
-                    <div class="col-md-4">
-                      <label for="contact_department">Department</label>
-                      <select
-                        class="form-control pointer"
-                        name="contact[department]"
+                    <div class="col-md-3">
+                      <label for="residentialApartments"
+                        >Number of apartments *</label
                       >
-                        <option value="">--- Select ---</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Webdesign">Webdesign</option>
-                        <option value="Architecture">Architecture</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label for="contact:message">Message *</label>
-                      <textarea
-                        required
-                        maxlength="10000"
-                        rows="8"
-                        class="form-control"
-                        name="contact[message]"
-                        id="contact:message"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label for="contact:attachment">File Attachment</label>
-
-                      <!-- custom file upload -->
                       <input
-                        class="custom-file-upload"
-                        type="file"
-                        id="file"
-                        name="contact[attachment]"
-                        id="contact:attachment"
-                        data-btn-text="Select a File"
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[residentialApartments][required]"
+                        id="residentialApartments"
                       />
-                      <small class="text-muted block"
-                        >Max file size: 10Mb (zip/pdf/jpg/png)</small
+                    </div>
+                  </div>
+                  <!--Number of floors-->
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="residentialFloors"
+                        >Number of floors contained in the building, excluding
+                        basements *</label
                       >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[residentialFloors][required]"
+                        id="residentialFloors"
+                      />
+                    </div>
+                  </div>
+                  <!--Number of basements-->
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="residentialBasements"
+                        >Number of basements *</label
+                      >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[residentialBasements][required]"
+                        id="residentialBasements"
+                      />
                     </div>
                   </div>
                 </fieldset>
+                <!--/Residential Options-->
 
+                <!--Commercial Options-->
+                <!--Number of distinct businesses-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="commercialBusinesses"
+                      >Number of distinct businesses *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[commercialBusinesses][required]"
+                      id="commercialBusinesses"
+                    />
+                  </div>
+                </div>
+                <!--Number of floors-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="commercialFloors"
+                      >Number of floors in the building, excluding basements
+                      *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[commercialFloors][required]"
+                      id="commercialFloors"
+                    />
+                  </div>
+                </div>
+                <!--Number of basements-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="commercialBasements"
+                      >Number of basements contained in the building *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[commercialBasements][required]"
+                      id="commercialBasements"
+                    />
+                  </div>
+                </div>
+                <!--Number of parking spaces-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="commercialParking"
+                      >Number of parking space available *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[commercialParking][required]"
+                      id="commercialParking"
+                    />
+                  </div>
+                </div>
+                <!--Number of elevator cages-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="commercialElevator"
+                      >Number of elevator cages to be deployed *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[commercialElevator][required]"
+                      id="commercialElevator"
+                    />
+                  </div>
+                </div>
+
+                <!--/Commercial Options-->
+
+                <!-- Corporate Options-->
+                <!-- Number of tenant companies-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="corporateTenant"
+                      >Number of separate tenant companies *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[corporateTenant][required]"
+                      id="corporateTenant"
+                    />
+                  </div>
+                </div>
+                <!-- Number of floors-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="corporateFloors"
+                      >Number of floors contained in the building, excluding
+                      basements *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[corporateFloors][required]"
+                      id="corporateFloors"
+                    />
+                  </div>
+                </div>
+                <!-- Number of basements-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="corporateBasements"
+                      >Number of basements contained in the building *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[corporateBasements][required]"
+                      id="corporateBasements"
+                    />
+                  </div>
+                </div>
+                <!-- Number of parking spaces-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="corporateParking"
+                      >Number of parking spaces available *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[corporateParking][required]"
+                      id="corporateParking"
+                    />
+                  </div>
+                </div>
+                <!-- Number of occupants-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="corporateOccupants"
+                      >Maximum number of occupants per floor *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[corporateOccupants][required]"
+                      id="corporateOccupants"
+                    />
+                  </div>
+                </div>
+                <!-- /Corporate Options-->
+
+                <!-- Hybrid Options-->
+                <!-- Number of distinct businesses-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridBusinesses"
+                      >Number of distinct businesses *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[hybridBusinesses][required]"
+                      id="hybridBusinesses"
+                    />
+                  </div>
+                </div>
+                <!-- Number of floors-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridFloors"
+                      >Number of floors contained in the building, excluding
+                      basements *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[hybridFloors][required]"
+                      id="hybridFloors"
+                    />
+                  </div>
+                </div>
+                <!-- Number of basements-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridBasements"
+                      >Number of basements contained in the building *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[hybridBasements][required]"
+                      id="hybridBasements"
+                    />
+                  </div>
+                </div>
+                <!-- Number of parking spaces available-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridParking"
+                      >Number of parking spaces available *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[hybridParking][required]"
+                      id="hybridParking"
+                    />
+                  </div>
+                </div>
+                <!-- Max number of occupants -->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridMax"
+                      >Maximum number of occupants per floor *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      class="form-control"
+                      name="contact[hybridMax][required]"
+                      id="hybridMax"
+                    />
+                  </div>
+                </div>
+                <!-- Number of hours of activity-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="hybridActivity"
+                      >Number of hours of activity of the building *</label
+                    >
+                    <input
+                      required
+                      type="number"
+                      value=""
+                      min="0"
+                      max="24"
+                      class="form-control"
+                      name="contact[hybridActivity][required]"
+                      id="hybridActivity"
+                    />
+                  </div>
+                </div>
+                <!-- /Hybrid Options-->
+
+                <!-- Send Message -->
                 <div class="row">
                   <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">
@@ -386,10 +651,11 @@
             <!-- /FORM -->
 
             <!-- INFO -->
-            <div class="col-md-4 col-sm-4">
-              <h2>Visit Us</h2>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <h2>Visit Us</h2>
 
-              <!-- 
+                <!-- 
 							  Available heights
 								  h-100
 								  h-150
@@ -404,32 +670,33 @@
 								  h-600
 							  -->
 
-              <hr />
+                <hr />
 
-              <p>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5158879660034!2d-73.56930918444276!3d45.459410779100956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x320cd8b1b79bec0f!2s4468%20Wellington%20St%20Suite%20204%2C%20Verdun%2C%20QC%20H4G%201W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1632402509360!5m2!1sen!2sus"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                ></iframe>
-                <span class="block"
-                  ><strong><i class="fa fa-map-marker"></i> Address:</strong>
-                  4468 Wellington St Suite 204, Verdun, Quebec H4G 1W5</span
-                >
-                <span class="block"
-                  ><strong><i class="fa fa-phone"></i> Phone:</strong>
-                  <a href="tel:1800-555-1234">1800-555-1234</a></span
-                >
-                <span class="block"
-                  ><strong><i class="fa fa-envelope"></i> Email:</strong>
-                  <a href="mailto:mail@yourdomain.com"
-                    >info@codeboxx.biz</a
-                  ></span
-                >
-              </p>
+                <p>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5158879660034!2d-73.56930918444276!3d45.459410779100956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x320cd8b1b79bec0f!2s4468%20Wellington%20St%20Suite%20204%2C%20Verdun%2C%20QC%20H4G%201W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1632402509360!5m2!1sen!2sus"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                  ></iframe>
+                  <span class="block"
+                    ><strong><i class="fa fa-map-marker"></i> Address:</strong>
+                    4468 Wellington St Suite 204, Verdun, Quebec H4G 1W5</span
+                  >
+                  <span class="block"
+                    ><strong><i class="fa fa-phone"></i> Phone:</strong>
+                    <a href="tel:1800-555-1234">1800-555-1234</a></span
+                  >
+                  <span class="block"
+                    ><strong><i class="fa fa-envelope"></i> Email:</strong>
+                    <a href="mailto:mail@yourdomain.com"
+                      >info@codeboxx.biz</a
+                    ></span
+                  >
+                </p>
+              </div>
             </div>
             <!-- /INFO -->
           </div>
@@ -510,7 +777,7 @@
                 >
               </li>
             </ul>
-            &copy; All Rights Reserved, Company LTD
+            &copy; All Rights Reserved, Rocket Elevators
           </div>
         </div>
       </footer>
