@@ -21,3 +21,6 @@ Shifting gears to finalizing/debugging index.html and landing pages. Got embedde
 (Update 3): Created quoteScript.js file to link to quote.html. Added working map to quotes page. Starting to change some of the form to become ready for quote and js implementation. This will require much time researching and asking questions. Prepare for long periods of little to no visible progress.
 (Update 4): Removed comments from news on index. Began adding choices for quote form. Moved the map and contact us section of quote.html to bottom of page. Added many required choice options for quote.html. Really need to figure out the js programming part :/. Successfully added every option that is required on the quote form, just not neccessarilly how it will look as a final product. Still need to hide the choices not in use and implement js.
 (Update 5): Figured out some of the beginning JS for the quote page. Have some If Else statements that are supposed to show or hide options based off of user input. Still needs work, will work on more tomorrow. Already ahead of schedule I set for myself. Honestly, everytime I figure something out I feel awesome!
+
+9/24/21:
+Started making comments in JS to keep track of things. Added total value and number placeholder below quote form. Beginning to put everything in appropriate classes/IDs for js program.
