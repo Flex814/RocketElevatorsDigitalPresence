@@ -290,10 +290,16 @@
                         id="buildingType"
                       >
                         <option value="">--- Select ---</option>
-                        <option value="Residential">Residential</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Hybrid">Hybrid</option>
+                        <option id="residential" value="Residential">
+                          Residential
+                        </option>
+                        <option id="commercial" value="Commercial">
+                          Commercial
+                        </option>
+                        <option id="corporate" value="Corporate">
+                          Corporate
+                        </option>
+                        <option id="hybrid" value="Hybrid">Hybrid</option>
                       </select>
                     </div>
                   </div>
@@ -649,9 +655,10 @@
                   </div>
                   <!-- /Hybrid Options-->
 
-                  <!-- Total estimate-->
-                  <div class="row">
-                    <div class="col-md-12"><h1>Total</h1></div>
+                  <!-- Calculations-->
+                  <!--elevator amount-->
+                  <div id="elevator-amount" class="row">
+                    <div class="col-md-12"><h1>Number of elevators</h1></div>
                   </div>
 
                   <div class="col-md-12 total-val">

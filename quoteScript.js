@@ -35,3 +35,5 @@ $("#buildingType").change(function () {
 });
 //Makes if else statements work on buildingType change.
 $("#buildingType").trigger("change");
+
+//calculator
