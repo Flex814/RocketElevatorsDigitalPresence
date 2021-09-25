@@ -1,6 +1,7 @@
 "use strict";
 //If else statement
 $("#buildingType").change(function () {
+  //Change "BlankOptions to individual choice id options"
   // Show only Residential Options
   if ($(this).val() == "Residential") {
     $("#residentialOptions").show();

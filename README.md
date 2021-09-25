@@ -25,3 +25,4 @@ Shifting gears to finalizing/debugging index.html and landing pages. Got embedde
 9/24/21:
 Started making comments in JS to keep track of things. Added total value and number placeholder below quote form. Beginning to put everything in appropriate classes/IDs for js program.
 (Update 1): I think I messed up. I was making the program myself without even double checking if I was following the requirements of the documentation for input fields and the building type selection. Going to meet with coach Timothy to doublecheck, but this may be not great.
+(Need to do Later): Change "BlankOptions to individual choice id options" in JS, delete duplicate choices in quote.html. Delete specific "ResidentialOptioins" type divs and replace with general Choices Div. Need 3 radio buttons product lines.
