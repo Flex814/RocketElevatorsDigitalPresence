@@ -1,5 +1,6 @@
 "use strict";
-//If else statement
+//This script should be separated into 4 parts: show/hide script, number of lift cages calculator,  budget calculator, and results output.
+//If else statement for show/hide
 $("#buildingType").change(function () {
   //Change "BlankOptions to individual choice id options"
   // Show only Residential Options
@@ -36,5 +37,11 @@ $("#buildingType").change(function () {
 });
 //Makes if else statements work on buildingType change.
 $("#buildingType").trigger("change");
+//////////////////////////////////////////////////////////
+//number of lift cages calculator
 
-//calculator
+//////////////////////////////////////////////////////////
+//budget calculator
+
+//////////////////////////////////////////////////////////
+//results output
