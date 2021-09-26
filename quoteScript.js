@@ -1,5 +1,4 @@
 "use strict";
-//This script should be separated into 4 parts: show/hide script, number of lift cages calculator,  budget calculator, and results output.
 //If else statement for show/hide
 $("#buildingType").change(function () {
   // Show only Residential Options
@@ -62,10 +61,39 @@ $("#buildingType").change(function () {
 //Makes if else statements work on buildingType change.
 $("#buildingType").trigger("change");
 //////////////////////////////////////////////////////////
-//number of lift cages calculator
+//calculator
+//init to 0
+$("#numberElevators").val("0");
+$("#unitPrice").val("0$");
+$("#totalPrice").val("0$");
+$("#installationFees").val("0$");
+$("#finalPrice").val("0$");
 
-//////////////////////////////////////////////////////////
-//budget calculator
+//getProductLinePrice() finds unit price of each elevator based on product line chosen.
 
-//////////////////////////////////////////////////////////
-//results output
+//product line array
+var product_prices = new Array();
+product_prices["standard"] = 7565;
+product_prices["premium"] = 12345;
+product_prices["excelium"] = 15400;
+
+var theForm = document.forms["priceForm"];
+//Take user selection from radio buttons.
+function getProductLinePrice() {
+  var unitPrice = 0;
+  //get reference to form id="unitPrice"
+  var theForm = document.forms["priceForm"];
+  //get reference to product line user chooses name="radio-btn"
+  var radioBtn = theForm.elements["radio-btn"];
+  //loop through radio btns
+  for (var i = 0; i < radioBtn.length; i++) {
+    //if radio btn checked
+    if (radioBtn[i].checked) {
+      //set unitPrice to value of checked radio btn using previous array
+      unitPrice = product_prices[radioBtn[i].value];
+      //stop loop after value found
+      break;
+    }
+  }
+  return unitPrice;
+}

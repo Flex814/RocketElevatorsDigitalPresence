@@ -277,7 +277,8 @@
               <!--</form>action="php/contact.php"
                 method="post"
                 enctype="multipart/form-data">-->
-              <form>
+
+              <form action="" id="priceForm">
                 <fieldset>
                   <input type="hidden" name="action" value="contact_send" />
                   <!-- Building type-->
@@ -474,6 +475,7 @@
                         id="productTypeS"
                         name="radio-btn"
                         value="standard"
+                        checked="checked"
                       />
                       <i></i>Standard</label
                     >
@@ -506,66 +508,71 @@
 
                     <ul class="list-unstyled">
                       <!--Number of elevators needed-->
-                      <div class="row">
+                      <div id="elevator-amount" class="row">
                         <div class="col-6">Number of elevators needed:</div>
                         <div class="col-6">
                           <input
                             id="numberElevators"
                             class="form-control"
-                            type="number"
+                            type="text"
                             readonly
+                            val=""
                           />
                         </div>
                       </div>
                       <!--/Number of elevators needed-->
                       <!--Unit price of each elevator-->
-                      <div class="row">
+                      <div id="elevator-unit-price" class="row">
                         <div class="col-6">Unit price of each elevator:</div>
                         <div class="col-6">
                           <input
                             id="unitPrice"
                             class="form-control"
-                            type="number"
+                            type="text"
                             readonly
+                            val=""
                           />
                         </div>
                       </div>
                       <!--/Unit price of each elevator-->
                       <!--Total price of elevators-->
-                      <div class="row">
+                      <div id="elevator-total-price" class="row">
                         <div class="col-6">Total price of elevators:</div>
                         <div class="col-6">
                           <input
                             id="totalPrice"
                             class="form-control"
-                            type="number"
+                            type="text"
                             readonly
+                            val=""
                           />
                         </div>
                       </div>
                       <!--/Total price of elevators-->
                       <!--Installation Fees-->
-                      <div class="row">
+                      <div id="installation-fees" class="row">
                         <div class="col-6">Installation Fees:</div>
                         <div class="col-6">
                           <input
                             id="installationFees"
                             class="form-control"
-                            type="number"
+                            type="text"
                             readonly
+                            val=""
                           />
                         </div>
                       </div>
                       <!--/Installation Fees-->
                       <!--Final price-->
-                      <div class="row">
+                      <div id="final-price" class="row">
                         <div class="col-6">Final Price:</div>
                         <div class="col-6">
                           <input
                             id="finalPrice"
                             class="form-control"
-                            type="number"
+                            type="text"
                             readonly
+                            val=""
                           />
                         </div>
                       </div>
@@ -573,16 +580,7 @@
                       <div class="row col-6"></div>
                     </ul>
                   </div>
-                  <!--elevator amount-->
-                  <!-- <div id="elevator-amount" class="row">
-                    <div class="col-md-12"><h1>Number of elevators</h1></div>
-                  </div>
 
-                  <div class="col-md-12 total-val">
-                    <span id="total_value">0</span>
-                  </div> -->
-
-                  <!-- Send Message
                   <br />
                   <div class="row">
                     <div class="col-md-12">
@@ -590,7 +588,7 @@
                         <i class="fa fa-check"></i> SEND MESSAGE
                       </button>
                     </div>
-                  </div> -->
+                  </div>
                 </fieldset>
               </form>
             </div>
