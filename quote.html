@@ -654,18 +654,136 @@
                     </div>
                   </div>
                   <!-- /Hybrid Options-->
+                  <br />
 
-                  <!-- Calculations-->
+                  <div class="row col-md-12">
+                    <h3>Choose product line</h3>
+                  </div>
+
+                  <br />
+                  <!-- Radio Button -->
+                  <div class="row">
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        id="productTypeS"
+                        name="radio-btn"
+                        value="standard"
+                      />
+                      <i></i>Standard</label
+                    >
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        id="productTypeP"
+                        name="radio-btn"
+                        value="premium"
+                      />
+                      <i></i>Premium</label
+                    >
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        id="productTypeE"
+                        name="radio-btn"
+                        value="excelium"
+                      />
+                      <i></i>Excelium</label
+                    >
+                  </div>
+
+                  <!-- Calculations section-->
+
+                  <div class="row col-md-6">
+                    <div>
+                      <h3>Estimated Price</h3>
+                    </div>
+
+                    <form id="estimatedPrice">
+                      <fieldset>
+                        <ul class="list-unstyled">
+                          <!--Number of elevators needed-->
+                          <div class="row">
+                            <div class="col-6">Number of elevators needed:</div>
+                            <div class="col-6">
+                              <input
+                                id="numberElevators"
+                                class="form-control"
+                                type="number"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                          <!--/Number of elevators needed-->
+                          <!--Unit price of each elevator-->
+                          <div class="row">
+                            <div class="col-6">
+                              Unit price of each elevator:
+                            </div>
+                            <div class="col-6">
+                              <input
+                                id="unitPrice"
+                                class="form-control"
+                                type="number"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                          <!--/Unit price of each elevator-->
+                          <!--Total price of elevators-->
+                          <div class="row">
+                            <div class="col-6">Total price of elevators:</div>
+                            <div class="col-6">
+                              <input
+                                id="totalPrice"
+                                class="form-control"
+                                type="number"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                          <!--/Total price of elevators-->
+                          <!--Installation Fees-->
+                          <div class="row">
+                            <div class="col-6">Installation Fees:</div>
+                            <div class="col-6">
+                              <input
+                                id="installationFees"
+                                class="form-control"
+                                type="number"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                          <!--/Installation Fees-->
+                          <!--Final price-->
+                          <div class="row">
+                            <div class="col-6">Final Price:</div>
+                            <div class="col-6">
+                              <input
+                                id="finalPrice"
+                                class="form-control"
+                                type="number"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                          <!--/Final price-->
+                          <div class="row col-6"></div>
+                        </ul>
+                      </fieldset>
+                    </form>
+                  </div>
                   <!--elevator amount-->
-                  <div id="elevator-amount" class="row">
+                  <!-- <div id="elevator-amount" class="row">
                     <div class="col-md-12"><h1>Number of elevators</h1></div>
                   </div>
 
                   <div class="col-md-12 total-val">
                     <span id="total_value">0</span>
-                  </div>
+                  </div> -->
 
-                  <!-- Send Message -->
+                  <!-- Send Message
                   <br />
                   <div class="row">
                     <div class="col-md-12">
@@ -673,7 +791,7 @@
                         <i class="fa fa-check"></i> SEND MESSAGE
                       </button>
                     </div>
-                  </div>
+                  </div> -->
                 </fieldset>
               </form>
             </div>
