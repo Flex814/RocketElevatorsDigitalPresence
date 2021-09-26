@@ -303,12 +303,12 @@
                       </select>
                     </div>
                   </div>
-                  <!--Residential Options-->
-                  <div id="residentialOptions">
+                  <!--Options-->
+                  <div id="options">
                     <!--Number of apartments-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="residentialApartments"
+                        <label for="number-of-apartments"
                           >Number of apartments *</label
                         >
                         <input
@@ -317,56 +317,52 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[residentialApartments][required]"
-                          id="residentialApartments"
+                          name="contact[number-of-apartments][required]"
+                          id="number-of-apartments"
                         />
                       </div>
                     </div>
                     <!--Number of floors-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="residentialFloors"
-                          >Number of floors contained in the building, excluding
-                          basements *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[residentialFloors][required]"
-                          id="residentialFloors"
-                        />
+                    <div id="mainOptions">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <label for="number-of-floors"
+                            >Number of floors contained in the building,
+                            excluding basements *</label
+                          >
+                          <input
+                            required
+                            type="number"
+                            value=""
+                            min="0"
+                            class="form-control"
+                            name="contact[number-of-floors][required]"
+                            id="number-of-floors"
+                          />
+                        </div>
+                      </div>
+                      <!--Number of basements-->
+                      <div class="row">
+                        <div class="col-md-3">
+                          <label for="number-of-basements"
+                            >Number of basements *</label
+                          >
+                          <input
+                            required
+                            type="number"
+                            value=""
+                            min="0"
+                            class="form-control"
+                            name="contact[number-of-basements][required]"
+                            id="number-of-basements"
+                          />
+                        </div>
                       </div>
                     </div>
-                    <!--Number of basements-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="residentialBasements"
-                          >Number of basements *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[residentialBasements][required]"
-                          id="residentialBasements"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--/Residential Options-->
-
-                  <!--Commercial Options-->
-                  <div id="commercialOptions">
                     <!--Number of distinct businesses-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="commercialBusinesses"
+                        <label for="number-of-companies"
                           >Number of distinct businesses *</label
                         >
                         <input
@@ -375,51 +371,15 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[commercialBusinesses][required]"
-                          id="commercialBusinesses"
-                        />
-                      </div>
-                    </div>
-                    <!--Number of floors-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="commercialFloors"
-                          >Number of floors in the building, excluding basements
-                          *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[commercialFloors][required]"
-                          id="commercialFloors"
-                        />
-                      </div>
-                    </div>
-                    <!--Number of basements-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="commercialBasements"
-                          >Number of basements contained in the building
-                          *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[commercialBasements][required]"
-                          id="commercialBasements"
+                          name="contact[number-of-companies][required]"
+                          id="number-of-companies"
                         />
                       </div>
                     </div>
                     <!--Number of parking spaces-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="commercialParking"
+                        <label for="number-of-parking-spots"
                           >Number of parking space available *</label
                         >
                         <input
@@ -428,15 +388,15 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[commercialParking][required]"
-                          id="commercialParking"
+                          name="contact[number-of-parking-spots][required]"
+                          id="number-of-parking-spots"
                         />
                       </div>
                     </div>
                     <!--Number of elevator cages-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="commercialElevator"
+                        <label for="number-of-elevators"
                           >Number of elevator cages to be deployed *</label
                         >
                         <input
@@ -445,20 +405,16 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[commercialElevator][required]"
-                          id="commercialElevator"
+                          name="contact[number-of-elevators][required]"
+                          id="number-of-elevators"
                         />
                       </div>
                     </div>
-                  </div>
-                  <!--/Commercial Options-->
 
-                  <!-- Corporate Options-->
-                  <div id="corporateOptions">
                     <!-- Number of tenant companies-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="corporateTenant"
+                        <label for="number-of-corporations"
                           >Number of separate tenant companies *</label
                         >
                         <input
@@ -467,68 +423,15 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[corporateTenant][required]"
-                          id="corporateTenant"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of floors-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="corporateFloors"
-                          >Number of floors contained in the building, excluding
-                          basements *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[corporateFloors][required]"
-                          id="corporateFloors"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of basements-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="corporateBasements"
-                          >Number of basements contained in the building
-                          *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[corporateBasements][required]"
-                          id="corporateBasements"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of parking spaces-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="corporateParking"
-                          >Number of parking spaces available *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[corporateParking][required]"
-                          id="corporateParking"
+                          name="contact[number-of-corporations][required]"
+                          id="number-of-corporations"
                         />
                       </div>
                     </div>
                     <!-- Number of occupants-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="corporateOccupants"
+                        <label for="maximum-occupancy"
                           >Maximum number of occupants per floor *</label
                         >
                         <input
@@ -537,107 +440,15 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[corporateOccupants][required]"
-                          id="corporateOccupants"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Corporate Options-->
-
-                  <!-- Hybrid Options-->
-                  <div id="hybridOptions">
-                    <!-- Number of distinct businesses-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="hybridBusinesses"
-                          >Number of distinct businesses *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[hybridBusinesses][required]"
-                          id="hybridBusinesses"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of floors-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="hybridFloors"
-                          >Number of floors contained in the building, excluding
-                          basements *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[hybridFloors][required]"
-                          id="hybridFloors"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of basements-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="hybridBasements"
-                          >Number of basements contained in the building
-                          *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[hybridBasements][required]"
-                          id="hybridBasements"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of parking spaces available-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="hybridParking"
-                          >Number of parking spaces available *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[hybridParking][required]"
-                          id="hybridParking"
-                        />
-                      </div>
-                    </div>
-                    <!-- Max number of occupants -->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="hybridMax"
-                          >Maximum number of occupants per floor *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[hybridMax][required]"
-                          id="hybridMax"
+                          name="contact[maximum-occupancy][required]"
+                          id="maximum-occupancy"
                         />
                       </div>
                     </div>
                     <!-- Number of hours of activity-->
                     <div class="row">
                       <div class="col-md-3">
-                        <label for="hybridActivity"
+                        <label for="business-hours"
                           >Number of hours of activity of the building *</label
                         >
                         <input
@@ -647,13 +458,12 @@
                           min="0"
                           max="24"
                           class="form-control"
-                          name="contact[hybridActivity][required]"
-                          id="hybridActivity"
+                          name="contact[business-hours][required]"
+                          id="business-hours"
                         />
                       </div>
                     </div>
                   </div>
-                  <!-- /Hybrid Options-->
                   <br />
 
                   <div class="row col-md-12">
@@ -699,80 +509,74 @@
                       <h3>Estimated Price</h3>
                     </div>
 
-                    <form id="estimatedPrice">
-                      <fieldset>
-                        <ul class="list-unstyled">
-                          <!--Number of elevators needed-->
-                          <div class="row">
-                            <div class="col-6">Number of elevators needed:</div>
-                            <div class="col-6">
-                              <input
-                                id="numberElevators"
-                                class="form-control"
-                                type="number"
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <!--/Number of elevators needed-->
-                          <!--Unit price of each elevator-->
-                          <div class="row">
-                            <div class="col-6">
-                              Unit price of each elevator:
-                            </div>
-                            <div class="col-6">
-                              <input
-                                id="unitPrice"
-                                class="form-control"
-                                type="number"
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <!--/Unit price of each elevator-->
-                          <!--Total price of elevators-->
-                          <div class="row">
-                            <div class="col-6">Total price of elevators:</div>
-                            <div class="col-6">
-                              <input
-                                id="totalPrice"
-                                class="form-control"
-                                type="number"
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <!--/Total price of elevators-->
-                          <!--Installation Fees-->
-                          <div class="row">
-                            <div class="col-6">Installation Fees:</div>
-                            <div class="col-6">
-                              <input
-                                id="installationFees"
-                                class="form-control"
-                                type="number"
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <!--/Installation Fees-->
-                          <!--Final price-->
-                          <div class="row">
-                            <div class="col-6">Final Price:</div>
-                            <div class="col-6">
-                              <input
-                                id="finalPrice"
-                                class="form-control"
-                                type="number"
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <!--/Final price-->
-                          <div class="row col-6"></div>
-                        </ul>
-                      </fieldset>
-                    </form>
+                    <ul class="list-unstyled">
+                      <!--Number of elevators needed-->
+                      <div class="row">
+                        <div class="col-6">Number of elevators needed:</div>
+                        <div class="col-6">
+                          <input
+                            id="numberElevators"
+                            class="form-control"
+                            type="number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <!--/Number of elevators needed-->
+                      <!--Unit price of each elevator-->
+                      <div class="row">
+                        <div class="col-6">Unit price of each elevator:</div>
+                        <div class="col-6">
+                          <input
+                            id="unitPrice"
+                            class="form-control"
+                            type="number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <!--/Unit price of each elevator-->
+                      <!--Total price of elevators-->
+                      <div class="row">
+                        <div class="col-6">Total price of elevators:</div>
+                        <div class="col-6">
+                          <input
+                            id="totalPrice"
+                            class="form-control"
+                            type="number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <!--/Total price of elevators-->
+                      <!--Installation Fees-->
+                      <div class="row">
+                        <div class="col-6">Installation Fees:</div>
+                        <div class="col-6">
+                          <input
+                            id="installationFees"
+                            class="form-control"
+                            type="number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <!--/Installation Fees-->
+                      <!--Final price-->
+                      <div class="row">
+                        <div class="col-6">Final Price:</div>
+                        <div class="col-6">
+                          <input
+                            id="finalPrice"
+                            class="form-control"
+                            type="number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <!--/Final price-->
+                      <div class="row col-6"></div>
+                    </ul>
                   </div>
                   <!--elevator amount-->
                   <!-- <div id="elevator-amount" class="row">

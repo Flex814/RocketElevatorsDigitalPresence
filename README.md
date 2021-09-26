@@ -30,3 +30,6 @@ Started making comments in JS to keep track of things. Added total value and num
 9/25/21:
 Mostly writing out on paper how program is supposed to run.
 (Update 1): Commented out "Send message" div and "elevator amount" div on quote.html. Adding "Estimated Price" section at end of form. Set the foundation for the estimated price html and later js programming. Added Radio Button with service options. Got radio buttons working, but will probably start on refactoring the previous parts of the quote form since I did that the wrong way.
+
+9/26/21:
+Probably going to start refactoring my original Building Type Selector to make the future code easier. Got rid of useless extra code options for building type selector. Refactored the JS with the building type selectors. Refactoring has now made the show/hide program not work, so now will proceed to troubleshoot.
