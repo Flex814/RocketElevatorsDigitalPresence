@@ -304,12 +304,28 @@
                     </div>
                   </div>
                   <!--Options-->
-                  <div id="options">
-                    <!--Number of apartments-->
-                    <div class="row">
+                  <!--Number of apartments-->
+                  <div id="number-of-apartments" class="row">
+                    <div class="col-md-3">
+                      <label for="op1">Number of apartments *</label>
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[op1][required]"
+                        id="op1"
+                      />
+                    </div>
+                  </div>
+                  <!--Number of floors-->
+                  <div id="number-of-floors">
+                    <div id="op2" class="row">
                       <div class="col-md-3">
-                        <label for="number-of-apartments"
-                          >Number of apartments *</label
+                        <label for="op2"
+                          >Number of floors contained in the building, excluding
+                          basements *</label
                         >
                         <input
                           required
@@ -317,86 +333,64 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[number-of-apartments][required]"
-                          id="number-of-apartments"
+                          name="contact[op2][required]"
+                          id="op2"
                         />
                       </div>
                     </div>
-                    <!--Number of floors-->
-                    <div id="mainOptions">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <label for="number-of-floors"
-                            >Number of floors contained in the building,
-                            excluding basements *</label
-                          >
-                          <input
-                            required
-                            type="number"
-                            value=""
-                            min="0"
-                            class="form-control"
-                            name="contact[number-of-floors][required]"
-                            id="number-of-floors"
-                          />
-                        </div>
-                      </div>
-                      <!--Number of basements-->
-                      <div class="row">
-                        <div class="col-md-3">
-                          <label for="number-of-basements"
-                            >Number of basements *</label
-                          >
-                          <input
-                            required
-                            type="number"
-                            value=""
-                            min="0"
-                            class="form-control"
-                            name="contact[number-of-basements][required]"
-                            id="number-of-basements"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <!--Number of distinct businesses-->
-                    <div class="row">
+                    <!--Number of basements-->
+                    <div id="number-of-basements" class="row">
                       <div class="col-md-3">
-                        <label for="number-of-companies"
-                          >Number of distinct businesses *</label
-                        >
+                        <label for="op3">Number of basements *</label>
                         <input
                           required
                           type="number"
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[number-of-companies][required]"
-                          id="number-of-companies"
+                          name="contact[op3][required]"
+                          id="op3"
                         />
                       </div>
                     </div>
-                    <!--Number of parking spaces-->
-                    <div class="row">
+                  </div>
+                  <!--Number of parking spaces-->
+                  <div id="number-of-parking-spots" class="row">
+                    <div class="col-md-3">
+                      <label for="op4"
+                        >Number of parking space available *</label
+                      >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[op4][required]"
+                        id="op4"
+                      />
+                    </div>
+                  </div>
+                  <!--Number of distinct businesses-->
+                  <div id="commercialOption">
+                    <div id="number-of-companies" class="row">
                       <div class="col-md-3">
-                        <label for="number-of-parking-spots"
-                          >Number of parking space available *</label
-                        >
+                        <label for="op5">Number of distinct businesses *</label>
                         <input
                           required
                           type="number"
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[number-of-parking-spots][required]"
-                          id="number-of-parking-spots"
+                          name="contact[op5][required]"
+                          id="op5"
                         />
                       </div>
                     </div>
                     <!--Number of elevator cages-->
-                    <div class="row">
+                    <div id="number-of-elevators" class="row">
                       <div class="col-md-3">
-                        <label for="number-of-elevators"
+                        <label for="op6"
                           >Number of elevator cages to be deployed *</label
                         >
                         <input
@@ -405,65 +399,66 @@
                           value=""
                           min="0"
                           class="form-control"
-                          name="contact[number-of-elevators][required]"
-                          id="number-of-elevators"
-                        />
-                      </div>
-                    </div>
-
-                    <!-- Number of tenant companies-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="number-of-corporations"
-                          >Number of separate tenant companies *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[number-of-corporations][required]"
-                          id="number-of-corporations"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of occupants-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="maximum-occupancy"
-                          >Maximum number of occupants per floor *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[maximum-occupancy][required]"
-                          id="maximum-occupancy"
-                        />
-                      </div>
-                    </div>
-                    <!-- Number of hours of activity-->
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label for="business-hours"
-                          >Number of hours of activity of the building *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          max="24"
-                          class="form-control"
-                          name="contact[business-hours][required]"
-                          id="business-hours"
+                          name="contact[op6][required]"
+                          id="op6"
                         />
                       </div>
                     </div>
                   </div>
+
+                  <!-- Number of tenant companies-->
+                  <div id="number-of-corporations" class="row">
+                    <div class="col-md-3">
+                      <label for="op7"
+                        >Number of separate tenant companies *</label
+                      >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[op7][required]"
+                        id="op7"
+                      />
+                    </div>
+                  </div>
+                  <!-- Number of occupants-->
+                  <div id="maximum-occupancy" class="row">
+                    <div class="col-md-3">
+                      <label for="op8"
+                        >Maximum number of occupants per floor *</label
+                      >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        class="form-control"
+                        name="contact[op8][required]"
+                        id="op8"
+                      />
+                    </div>
+                  </div>
+                  <!-- Number of hours of activity-->
+                  <div id="business-hours" class="row">
+                    <div class="col-md-3">
+                      <label for="op9"
+                        >Number of hours of activity of the building *</label
+                      >
+                      <input
+                        required
+                        type="number"
+                        value=""
+                        min="0"
+                        max="24"
+                        class="form-control"
+                        name="contact[op9][required]"
+                        id="op9"
+                      />
+                    </div>
+                  </div>
+
                   <br />
 
                   <div class="row col-md-12">
