@@ -195,411 +195,337 @@
       <!-- /PAGE HEADER -->
 
       <!-- -->
-      <section>
-        <div class="container">
-          <div class="row">
-            <!-- FORM -->
-            <div class="col-md-8">
-              <h3>
-                Please select a <strong><em>Building Type</em></strong> to get
-                started!
-              </h3>
-
-              <!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-              <!-- Alert Success -->
-              <div id="alert_success" class="alert alert-success mb-30">
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="alert"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-                <strong>Thank You!</strong> Your message successfully sent!
-              </div>
-              <!-- /Alert Success -->
-
-              <!-- Alert Failed -->
-              <div id="alert_failed" class="alert alert-danger mb-30">
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="alert"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-                <strong>[SMTP] Error!</strong> Internal server error!
-              </div>
-              <!-- /Alert Failed -->
-
-              <!-- Alert Mandatory -->
-              <div id="alert_mandatory" class="alert alert-danger mb-30">
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="alert"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-                <strong>Sorry!</strong> You need to complete all mandatory (*)
-                fields!
-              </div>
-              <!-- /Alert Mandatory -->
-
-              <!-- Removed php contact here-->
-
-              <!--</form>action="php/contact.php"
-                method="post"
-                enctype="multipart/form-data">-->
-
-              <form action="" id="priceForm">
-                <fieldset>
-                  <input type="hidden" name="action" value="contact_send" />
-                  <!-- Building type-->
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label for="buildingType">Building Type *</label>
-                      <select
-                        class="form-control pointer"
-                        name="contact[department]"
-                        id="buildingType"
-                      >
-                        <option value="">--- Select ---</option>
-                        <option id="residential" value="Residential">
-                          Residential
-                        </option>
-                        <option id="commercial" value="Commercial">
-                          Commercial
-                        </option>
-                        <option id="corporate" value="Corporate">
-                          Corporate
-                        </option>
-                        <option id="hybrid" value="Hybrid">Hybrid</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!--Options-->
-                  <!--Number of apartments-->
-                  <div id="number-of-apartments" class="row">
-                    <div class="col-md-3">
-                      <label for="op1">Number of apartments *</label>
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[op1][required]"
-                        id="op1"
-                      />
-                    </div>
-                  </div>
-                  <!--Number of floors-->
-                  <div id="number-of-floors">
-                    <div id="op2" class="row">
-                      <div class="col-md-3">
-                        <label for="op2"
-                          >Number of floors contained in the building, excluding
-                          basements *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[op2][required]"
-                          id="op2"
-                        />
-                      </div>
-                    </div>
-                    <!--Number of basements-->
-                    <div id="number-of-basements" class="row">
-                      <div class="col-md-3">
-                        <label for="op3">Number of basements *</label>
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[op3][required]"
-                          id="op3"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <!--Number of parking spaces-->
-                  <div id="number-of-parking-spots" class="row">
-                    <div class="col-md-3">
-                      <label for="op4"
-                        >Number of parking space available *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[op4][required]"
-                        id="op4"
-                      />
-                    </div>
-                  </div>
-                  <!--Number of distinct businesses-->
-                  <div id="commercialOption">
-                    <div id="number-of-companies" class="row">
-                      <div class="col-md-3">
-                        <label for="op5">Number of distinct businesses *</label>
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[op5][required]"
-                          id="op5"
-                        />
-                      </div>
-                    </div>
-                    <!--Number of elevator cages-->
-                    <div id="number-of-elevators" class="row">
-                      <div class="col-md-3">
-                        <label for="op6"
-                          >Number of elevator cages to be deployed *</label
-                        >
-                        <input
-                          required
-                          type="number"
-                          value=""
-                          min="0"
-                          class="form-control"
-                          name="contact[op6][required]"
-                          id="op6"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Number of tenant companies-->
-                  <div id="number-of-corporations" class="row">
-                    <div class="col-md-3">
-                      <label for="op7"
-                        >Number of separate tenant companies *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[op7][required]"
-                        id="op7"
-                      />
-                    </div>
-                  </div>
-                  <!-- Number of occupants-->
-                  <div id="maximum-occupancy" class="row">
-                    <div class="col-md-3">
-                      <label for="op8"
-                        >Maximum number of occupants per floor *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        class="form-control"
-                        name="contact[op8][required]"
-                        id="op8"
-                      />
-                    </div>
-                  </div>
-                  <!-- Number of hours of activity-->
-                  <div id="business-hours" class="row">
-                    <div class="col-md-3">
-                      <label for="op9"
-                        >Number of hours of activity of the building *</label
-                      >
-                      <input
-                        required
-                        type="number"
-                        value=""
-                        min="0"
-                        max="24"
-                        class="form-control"
-                        name="contact[op9][required]"
-                        id="op9"
-                      />
-                    </div>
-                  </div>
-
-                  <br />
-
-                  <div class="row col-md-12">
-                    <h3>Choose product line</h3>
-                  </div>
-
-                  <br />
-                  <!-- Radio Button -->
-                  <div class="row">
-                    <label class="radio">
-                      <input
-                        type="radio"
-                        id="productTypeS"
-                        name="radio-btn"
-                        value="standard"
-                        checked="checked"
-                      />
-                      <i></i>Standard</label
-                    >
-                    <label class="radio">
-                      <input
-                        type="radio"
-                        id="productTypeP"
-                        name="radio-btn"
-                        value="premium"
-                      />
-                      <i></i>Premium</label
-                    >
-                    <label class="radio">
-                      <input
-                        type="radio"
-                        id="productTypeE"
-                        name="radio-btn"
-                        value="excelium"
-                      />
-                      <i></i>Excelium</label
-                    >
-                  </div>
-
-                  <!-- Calculations section-->
-
-                  <div class="row col-md-6">
-                    <div>
-                      <h3>Estimated Price</h3>
-                    </div>
-
-                    <ul class="list-unstyled">
-                      <!--Number of elevators needed-->
-                      <div id="elevator-amount" class="row">
-                        <div class="col-6">Number of elevators needed:</div>
-                        <div class="col-6">
-                          <input
-                            id="numberElevators"
-                            class="form-control"
-                            type="text"
-                            readonly
-                            val=""
-                          />
-                        </div>
-                      </div>
-                      <!--/Number of elevators needed-->
-                      <!--Unit price of each elevator-->
-                      <div id="elevator-unit-price" class="row">
-                        <div class="col-6">Unit price of each elevator:</div>
-                        <div class="col-6">
-                          <input
-                            id="unitPrice"
-                            class="form-control"
-                            type="text"
-                            readonly
-                            val=""
-                          />
-                        </div>
-                      </div>
-                      <!--/Unit price of each elevator-->
-                      <!--Total price of elevators-->
-                      <div id="elevator-total-price" class="row">
-                        <div class="col-6">Total price of elevators:</div>
-                        <div class="col-6">
-                          <input
-                            id="totalPrice"
-                            class="form-control"
-                            type="text"
-                            readonly
-                            val=""
-                          />
-                        </div>
-                      </div>
-                      <!--/Total price of elevators-->
-                      <!--Installation Fees-->
-                      <div id="installation-fees" class="row">
-                        <div class="col-6">Installation Fees:</div>
-                        <div class="col-6">
-                          <input
-                            id="installationFees"
-                            class="form-control"
-                            type="text"
-                            readonly
-                            val=""
-                          />
-                        </div>
-                      </div>
-                      <!--/Installation Fees-->
-                      <!--Final price-->
-                      <div id="final-price" class="row">
-                        <div class="col-6">Final Price:</div>
-                        <div class="col-6">
-                          <input
-                            id="finalPrice"
-                            class="form-control"
-                            type="text"
-                            readonly
-                            val=""
-                          />
-                        </div>
-                      </div>
-                      <!--/Final price-->
-                      <div class="row col-6"></div>
-                    </ul>
-                  </div>
-
-                  <br />
-                  <div class="row">
-                    <div class="col-md-12">
-                      <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-check"></i> SEND MESSAGE
-                      </button>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
+      <section id="priceForm">
+        <!-- quote section -->
+        <div class="col-md-8">
+          <h3>
+            Please select a <strong><em>Building Type</em></strong> to get
+            started!
+          </h3>
+        </div>
+        <!-- Building type-->
+        <div class="row">
+          <div class="col-md-3">
+            <label for="buildingType">Building Type *</label>
+            <select
+              class="form-control pointer"
+              name="type[building]"
+              id="buildingType"
+            >
+              <option value="select">--- Select ---</option>
+              <option
+                id="residential"
+                value="Residential"
+                onchange="buildingSelect()"
+              >
+                Residential
+              </option>
+              <option
+                id="commercial"
+                value="Commercial"
+                onchange="buildingSelect()"
+              >
+                Commercial
+              </option>
+              <option
+                id="corporate"
+                value="Corporate"
+                onchange="buildingSelect()"
+              >
+                Corporate
+              </option>
+              <option id="hybrid" value="Hybrid" onchange="buildingSelect()">
+                Hybrid
+              </option>
+            </select>
+          </div>
+        </div>
+        <!--Options-->
+        <!--Number of apartments-->
+        <div id="number-of-apartments" class="row">
+          <div class="col-md-3">
+            <label for="op1">Number of apartments *</label>
+            <input
+              required
+              type="number"
+              value=""
+              min="0"
+              class="form-control"
+              name="contact[op1][required]"
+              id="op1"
+            />
+          </div>
+        </div>
+        <!--Number of floors-->
+        <div id="number-of-floors">
+          <div id="op2" class="row">
+            <div class="col-md-3">
+              <label for="op2"
+                >Number of floors contained in the building, excluding basements
+                *</label
+              >
+              <input
+                required
+                type="number"
+                value=""
+                min="0"
+                class="form-control"
+                name="contact[op2][required]"
+                id="op2"
+              />
             </div>
-            <!-- /FORM -->
+          </div>
+          <!--Number of basements-->
+          <div id="number-of-basements" class="row">
+            <div class="col-md-3">
+              <label for="op3">Number of basements *</label>
+              <input
+                required
+                type="number"
+                value=""
+                min="0"
+                class="form-control"
+                name="contact[op3][required]"
+                id="op3"
+              />
+            </div>
+          </div>
+        </div>
+        <!--Number of parking spaces-->
+        <div id="number-of-parking-spots" class="row">
+          <div class="col-md-3">
+            <label for="op4">Number of parking space available *</label>
+            <input
+              required
+              type="number"
+              value=""
+              min="0"
+              class="form-control"
+              name="contact[op4][required]"
+              id="op4"
+            />
+          </div>
+        </div>
+        <!--Number of distinct businesses-->
+        <div id="commercialOption">
+          <div id="number-of-companies" class="row">
+            <div class="col-md-3">
+              <label for="op5">Number of distinct businesses *</label>
+              <input
+                required
+                type="number"
+                value=""
+                min="0"
+                class="form-control"
+                name="contact[op5][required]"
+                id="op5"
+              />
+            </div>
+          </div>
+          <!--Number of elevator cages-->
+          <div id="number-of-elevators" class="row">
+            <div class="col-md-3">
+              <label for="op6">Number of elevator cages to be deployed *</label>
+              <input
+                required
+                type="number"
+                value=""
+                min="0"
+                class="form-control"
+                name="contact[op6][required]"
+                id="op6"
+              />
+            </div>
+          </div>
+        </div>
 
-            <!-- INFO -->
-            <div class="row">
-              <div class="col-md-4 col-sm-4">
-                <h2>Visit Us</h2>
+        <!-- Number of tenant companies-->
+        <div id="number-of-corporations" class="row">
+          <div class="col-md-3">
+            <label for="op7">Number of separate tenant companies *</label>
+            <input
+              required
+              type="number"
+              value=""
+              min="0"
+              class="form-control"
+              name="contact[op7][required]"
+              id="op7"
+            />
+          </div>
+        </div>
+        <!-- Number of occupants-->
+        <div id="maximum-occupancy" class="row">
+          <div class="col-md-3">
+            <label for="op8">Maximum number of occupants per floor *</label>
+            <input
+              required
+              type="number"
+              value=""
+              min="0"
+              class="form-control"
+              name="contact[op8][required]"
+              id="op8"
+            />
+          </div>
+        </div>
+        <!-- Number of hours of activity-->
+        <div id="business-hours" class="row">
+          <div class="col-md-3">
+            <label for="op9"
+              >Number of hours of activity of the building *</label
+            >
+            <input
+              required
+              type="number"
+              value=""
+              min="0"
+              max="24"
+              class="form-control"
+              name="contact[op9][required]"
+              id="op9"
+            />
+          </div>
+        </div>
 
-                <!-- 
+        <br />
+
+        <div class="row col-md-12">
+          <h3>Choose product line</h3>
+        </div>
+
+        <br />
+        <!-- Radio Button -->
+        <div class="row">
+          <label class="radio">
+            <input
+              type="radio"
+              id="productTypeS"
+              name="radio-btn"
+              value="standard"
+              checked="checked"
+            />
+            <i></i>Standard</label
+          >
+          <label class="radio">
+            <input
+              type="radio"
+              id="productTypeP"
+              name="radio-btn"
+              value="premium"
+            />
+            <i></i>Premium</label
+          >
+          <label class="radio">
+            <input
+              type="radio"
+              id="productTypeE"
+              name="radio-btn"
+              value="excelium"
+            />
+            <i></i>Excelium</label
+          >
+        </div>
+
+        <!-- Calculations section-->
+
+        <div class="row col-md-6">
+          <div>
+            <h3>Estimated Price</h3>
+          </div>
+
+          <ul class="list-unstyled">
+            <!--Number of elevators needed-->
+            <div id="elevator-amount" class="row">
+              <div class="col-6">Number of elevators needed:</div>
+              <div class="col-6">
+                <input
+                  id="numberElevators"
+                  class="form-control"
+                  type="text"
+                  readonly
+                  val=""
+                />
+              </div>
+            </div>
+            <!--/Number of elevators needed-->
+            <!--Unit price of each elevator-->
+            <div id="elevator-unit-price" class="row">
+              <div class="col-6">Unit price of each elevator:</div>
+              <div class="col-6">
+                <input
+                  id="unitPrice"
+                  class="form-control"
+                  type="text"
+                  readonly
+                  val=""
+                />
+              </div>
+            </div>
+            <!--/Unit price of each elevator-->
+            <!--Total price of elevators-->
+            <div id="elevator-total-price" class="row">
+              <div class="col-6">Total price of elevators:</div>
+              <div class="col-6">
+                <input
+                  id="totalPrice"
+                  class="form-control"
+                  type="text"
+                  readonly
+                  val=""
+                />
+              </div>
+            </div>
+            <!--/Total price of elevators-->
+            <!--Installation Fees-->
+            <div id="installation-fees" class="row">
+              <div class="col-6">Installation Fees:</div>
+              <div class="col-6">
+                <input
+                  id="installationFees"
+                  class="form-control"
+                  type="text"
+                  readonly
+                  val=""
+                />
+              </div>
+            </div>
+            <!--/Installation Fees-->
+            <!--Final price-->
+            <div id="final-price" class="row">
+              <div class="col-6">Final Price:</div>
+              <div class="col-6">
+                <input
+                  id="finalPrice"
+                  class="form-control"
+                  type="text"
+                  readonly
+                  val=""
+                />
+              </div>
+            </div>
+            <!--/Final price-->
+            <div class="row col-6"></div>
+          </ul>
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-check"></i> SEND MESSAGE
+            </button>
+          </div>
+        </div>
+
+        <!-- /quote section -->
+
+        <!-- INFO -->
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <h2>Visit Us</h2>
+
+            <!-- 
 							  Available heights
 								  h-100
 								  h-150
@@ -614,37 +540,33 @@
 								  h-600
 							  -->
 
-                <hr />
+            <hr />
 
-                <p>
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5158879660034!2d-73.56930918444276!3d45.459410779100956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x320cd8b1b79bec0f!2s4468%20Wellington%20St%20Suite%20204%2C%20Verdun%2C%20QC%20H4G%201W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1632402509360!5m2!1sen!2sus"
-                    width="600"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                  ></iframe>
-                  <span class="block"
-                    ><strong><i class="fa fa-map-marker"></i> Address:</strong>
-                    4468 Wellington St Suite 204, Verdun, Quebec H4G 1W5</span
-                  >
-                  <span class="block"
-                    ><strong><i class="fa fa-phone"></i> Phone:</strong>
-                    <a href="tel:1800-555-1234">1800-555-1234</a></span
-                  >
-                  <span class="block"
-                    ><strong><i class="fa fa-envelope"></i> Email:</strong>
-                    <a href="mailto:mail@yourdomain.com"
-                      >info@codeboxx.biz</a
-                    ></span
-                  >
-                </p>
-              </div>
-            </div>
-            <!-- /INFO -->
+            <p>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5158879660034!2d-73.56930918444276!3d45.459410779100956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x320cd8b1b79bec0f!2s4468%20Wellington%20St%20Suite%20204%2C%20Verdun%2C%20QC%20H4G%201W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1632402509360!5m2!1sen!2sus"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+              <span class="block"
+                ><strong><i class="fa fa-map-marker"></i> Address:</strong> 4468
+                Wellington St Suite 204, Verdun, Quebec H4G 1W5</span
+              >
+              <span class="block"
+                ><strong><i class="fa fa-phone"></i> Phone:</strong>
+                <a href="tel:1800-555-1234">1800-555-1234</a></span
+              >
+              <span class="block"
+                ><strong><i class="fa fa-envelope"></i> Email:</strong>
+                <a href="mailto:mail@yourdomain.com">info@codeboxx.biz</a></span
+              >
+            </p>
           </div>
         </div>
+        <!-- /INFO -->
       </section>
       <!-- / -->
 

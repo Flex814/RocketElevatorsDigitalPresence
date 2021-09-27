@@ -34,3 +34,5 @@ Mostly writing out on paper how program is supposed to run.
 9/26/21:
 Probably going to start refactoring my original Building Type Selector to make the future code easier. Got rid of useless extra code options for building type selector. Refactored the JS with the building type selectors. Refactoring has now made the show/hide program not work, so now will proceed to troubleshoot.
 (Update 1): Back to having a working quotes form, but the js I've used is absolutely terrible. Constantly repeating lines of code, but I can't get it to work any other way. For now, I'm moving on. Spent way too long on something so simple. Began making a program in js to calculate total unit price based off of product line radio btn.
+9/27/21:
+Trying to reformat alot of my code and get rid of uneccessary blocks of code. Also adding more to the js. Found completely easier way to do the javascript and form than I was doing. Will try refactoring soon. Just preparing now.
