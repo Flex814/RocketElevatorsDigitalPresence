@@ -400,28 +400,31 @@
           <label class="radio">
             <input
               type="radio"
-              id="productTypeS"
-              name="radio-btn"
-              value="standard"
+              id="standard"
+              name="service"
+              value="7565"
               checked="checked"
+              onchange="buildingSelect()"
             />
             <i></i>Standard</label
           >
           <label class="radio">
             <input
               type="radio"
-              id="productTypeP"
-              name="radio-btn"
-              value="premium"
+              id="premium"
+              name="service"
+              value="12345"
+              onchange="buildingSelect()"
             />
             <i></i>Premium</label
           >
           <label class="radio">
             <input
               type="radio"
-              id="productTypeE"
-              name="radio-btn"
-              value="excelium"
+              id="excelium"
+              name="service"
+              value="15400"
+              onchange="buildingSelect()"
             />
             <i></i>Excelium</label
           >
@@ -684,6 +687,7 @@
 		-->
     <script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
     <script src="assets/plugins/gmaps.js"></script>
+    <script src="quoteScript.js"></script>
     <script>
       jQuery(document).ready(function () {
         /**
