@@ -40,3 +40,4 @@ Trying to reformat alot of my code and get rid of uneccessary blocks of code. Al
 
 9/28/21:
 Setting foundation for the javascript and jquery portions. Changing up quote.html little by little to try to make the script easier. At this pace, may be done by end of tomorrow. Centered everything on quote again.
+(Update 1): Set up comments for the script, almost done. Only having trouble with the hide/show with jquery. html/css mainly done.
