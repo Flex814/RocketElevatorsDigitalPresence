@@ -28,6 +28,7 @@ function buildingSelect() {
 //commercial function
 //if else statement for each product line selected?
 
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////
 //corporate function
 //vars store values of options, emplace restrictions
@@ -45,7 +46,20 @@ $(document).ready(function () {
 });
 //////////////////////////////////////////////////////////
 //deprecated portion
+=======
+>>>>>>> 076127c47f0147e111a7bb57e144596f1459e58f
 //////////////////////////////////////////////////////////
+//corporate function
+//vars store values of options, emplace restrictions
+//if else statement for each product line selected?
+
+//////////////////////////////////////////////////////////
+//hybrid function
+//vars store option values, restrictions, etc.
+//if else statement for each product line selected?
+
+//////////////////////////////////////////////////////////
+//Ready Document
 //calculator
 //init to 0
 // $("#numberElevators").val("0");
