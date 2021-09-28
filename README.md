@@ -36,7 +36,4 @@ Probably going to start refactoring my original Building Type Selector to make t
 (Update 1): Back to having a working quotes form, but the js I've used is absolutely terrible. Constantly repeating lines of code, but I can't get it to work any other way. For now, I'm moving on. Spent way too long on something so simple. Began making a program in js to calculate total unit price based off of product line radio btn.
 9/27/21:
 Trying to reformat alot of my code and get rid of uneccessary blocks of code. Also adding more to the js. Found completely easier way to do the javascript and form than I was doing. Will try refactoring soon. Just preparing now.
-<<<<<<< HEAD
 (Update 1): Working on the script portion. Found snippets on stack overflow on Show & hide content based on select value, but still need to learn a bit more/ mess around with it. Edited parts of radio button and building select to link to function in JS for later. Will pick up tomorrow.
-=======
->>>>>>> 076127c47f0147e111a7bb57e144596f1459e58f
