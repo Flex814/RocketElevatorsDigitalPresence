@@ -37,3 +37,6 @@ Probably going to start refactoring my original Building Type Selector to make t
 9/27/21:
 Trying to reformat alot of my code and get rid of uneccessary blocks of code. Also adding more to the js. Found completely easier way to do the javascript and form than I was doing. Will try refactoring soon. Just preparing now.
 (Update 1): Working on the script portion. Found snippets on stack overflow on Show & hide content based on select value, but still need to learn a bit more/ mess around with it. Edited parts of radio button and building select to link to function in JS for later. Will pick up tomorrow.
+
+9/28/21:
+Setting foundation for the javascript and jquery portions. Changing up quote.html little by little to try to make the script easier. At this pace, may be done by end of tomorrow. Centered everything on quote again.
