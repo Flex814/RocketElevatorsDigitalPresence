@@ -29,6 +29,11 @@ const residential = function () {
   //calculate nbAppartment/nbFloor and store in var AvgPerFloor
   //calc AvgPerFloor/6 for the amount of elevators needed
   //calc nbFloor / 20 to obtain nbElevatorShafts
+  ////////////////////////////////////////////////////
+  //if standard is checked,
+  //if nbFloor > 20, multiply the (AvgPerFloor/6) by 2
+  //set price per elevator
+  //
 };
 //////////////////////////////////////////////////////////
 //commercial function
