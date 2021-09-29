@@ -31,22 +31,22 @@ var buildingSelect = function () {
 //if else statement for each product line selected?
 var residential = function () {
   //var section
-  //get nbAppartment
+  //get number of apartments
   var nbAppartment = parseFloat(document.getElementById("nbApartments").value);
   console.log(nbAppartment + " number of apartments");
 
-  //get nbFloor
+  //get number of floors
   var nbFloor = parseFloat(document.getElementById("nbFloors").value);
   console.log(nbFloor + " number of floors");
 
-  //calculate nbAppartment/nbFloor and store in var avgPerFloor
+  //calculate average doors per floor
   var avgPerFloor = Math.ceil(nbAppartment / nbFloor);
   console.log(avgPerFloor + " average doors per floor");
 
-  //calc AvgPerFloor/6 for the amount of elevators needed
+  //calc number of elevators needed
   var elevatorsNeeded = Math.ceil(avgPerFloor / 6);
   console.log("elevators needed is " + elevatorsNeeded);
-  //calc nbFloor / 20 to obtain nbElevatorColumns
+  //calc number of elevator columns
   var nbElevatorColumns = Math.ceil(nbFloor / 20);
   console.log("elevator columns is " + nbElevatorColumns);
   ////////////////////////////////////////////////////
@@ -92,6 +92,10 @@ var residential = function () {
     if (nbElevatorColumns > 20) {
       elevatorsNeeded *= 2;
     }
+    var elevatorPrice = eValue;
+    var totalPrice = parseFloat(elevatorsNeeded * eValue);
+    var iFees = totalPrice * excelium;
+    var finalPrice = totalPrice + iFees;
   }
 
   //if nbFloor > 20, multiply the (AvgPerFloor/6) by 2
