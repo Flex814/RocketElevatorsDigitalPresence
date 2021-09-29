@@ -44,3 +44,4 @@ Setting foundation for the javascript and jquery portions. Changing up quote.htm
 
 9/29/21:
 Home Stretch!!!! Show/Hide is working, just not pretty. Function for Residential is almost done, then will copy/paste and change it for the other building types. After that, it's debugging and launching website!
+(Update 1): finishing function for Residential to reuse for other building types. Getting stats to show up on screen for residential. Double checked values for Residential with the slack images and they are correct.
