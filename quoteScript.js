@@ -123,15 +123,45 @@ var commercial = function () {
   var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
   console.log(elevatorCage + " Elevator cages needed.");
   if (document.getElementById("standard").checked) {
-    var elevatorNeeded = elevatorCage; //elevator needed
+    var elevatorsNeeded = elevatorCage; //elevator needed
     var elevatorPrice = sValue; //elevator price
     var totalPrice = parseFloat(elevatorsNeeded * sValue); //total price
+    var iFees = totalPrice * standard; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("premium").checked) {
+    var elevatorsNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = pValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * pValue); //total price
+    var iFees = totalPrice * premium; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("excelium").checked) {
+    var elevatorsNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = eValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * eValue); //total price
+    var iFees = totalPrice * excelium; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
   }
 };
 //////////////////////////////////////////////////////////
@@ -139,14 +169,42 @@ var commercial = function () {
 //vars store values of options, emplace restrictions
 //if else statement for each product line selected?
 var corporate = function () {
+  var nbFloor = parseFloat(document.getElementById("nbfloors").value);
+  var nbBasement = parseFloat(document.getElementById("nbBasements").value);
+  var nbMax = parseFloat(document.getElementById("nbMax").value); //people per floor
+  var totalFloor = nbFloor + nbBasement;
+  var maxPerson = nbMax * totalFloor;
+  var nbElevators = maxPerson / 1000;
+  var nbColumns = totalFloor / 20;
+  var elevatorPerColumn = nbElevators / nbColumns;
+  var totalNbElevators = elevatorPerColumn * nbColumns;
+
   if (document.getElementById("standard").checked) {
+    var totalElevatorPrice = sValue * totalNbElevators;
+    var iFees = totalElevatorPrice * standard;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = sValue;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("premium").checked) {
+    var totalElevatorPrice = pValue * totalNbElevators;
+    var iFees = totalElevatorPrice * premium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = pValue;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("excelium").checked) {
+    var totalElevatorPrice = eValue * totalNbElevators;
+    var iFees = totalElevatorPrice * excelium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = eValue;
   }
+  document.getElementById("installationFees").value = iFees;
+  document.getElementById("unitPrice").value = unitPrice;
+  document.getElementById("numberElevators").value = nbElevators;
+  document.getElementById("totalPrice").value = totalElevatorPrice;
+  document.getElementById("finalPrice").value = finalPrice;
+  /////////ERROR HERE
 };
 //////////////////////////////////////////////////////////
 //hybrid function
