@@ -45,7 +45,7 @@ var residential = function () {
 
   //calc number of elevators needed
   var elevatorsNeeded = Math.ceil(avgPerFloor / 6);
-  console.log("elevators needed is " + elevatorsNeeded);
+
   //calc number of elevator columns
   var nbElevatorColumns = Math.ceil(nbFloor / 20);
   console.log("elevator columns is " + nbElevatorColumns);
@@ -54,10 +54,11 @@ var residential = function () {
   //if standard is checked,
   if (document.getElementById("standard").checked) {
     console.log("standard is selected");
-    if (nbFloor > 20) {
-      elevatorsNeeded *= 2;
-    }
-
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbFloor > 20) {
+    //   elevatorsNeeded *= 2;
+    // }
+    console.log("elevators needed is " + elevatorsNeeded);
     //price for elevator for standard
     var elevatorPrice = sValue;
     console.log("elevator price is " + elevatorPrice);
@@ -78,9 +79,10 @@ var residential = function () {
     //if premium is checked,
   } else if (document.getElementById("premium").checked) {
     console.log("premium is selected");
-    if (nbFloor > 20) {
-      elevatorsNeeded *= 2;
-    }
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbFloor > 20) {
+    //   elevatorsDoubled = elevatorsNeeded * 2;
+    // }
     var elevatorPrice = pValue;
     var totalPrice = parseFloat(elevatorsNeeded * pValue);
     var iFees = totalPrice * premium;
@@ -89,9 +91,10 @@ var residential = function () {
   //if excelium is checked,
   else if (document.getElementById("excelium").checked) {
     console.log("excelium is selected");
-    if (nbElevatorColumns > 20) {
-      elevatorsNeeded *= 2;
-    }
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbElevatorColumns > 20) {
+    //   elevatorsNeeded *= 2;
+    // }
     var elevatorPrice = eValue;
     var totalPrice = parseFloat(elevatorsNeeded * eValue);
     var iFees = totalPrice * excelium;
@@ -103,6 +106,7 @@ var residential = function () {
   //set total price of elevators
   //installation fees
   //final price
+
   document.getElementById("numberElevators").value = elevatorsNeeded;
   document.getElementById("unitPrice").value = elevatorPrice;
   document.getElementById("totalPrice").value = totalPrice;
@@ -113,17 +117,51 @@ var residential = function () {
 //////////////////////////////////////////////////////////
 //commercial function
 //if else statement for each product line selected?
-var commercial = function () {};
+var commercial = function () {
+  //////////////////////////////////////////////////////////
+  //var number of elevator cages to be deployed
+  var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
+  console.log(elevatorCage + " Elevator cages needed.");
+  if (document.getElementById("standard").checked) {
+    var elevatorNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = sValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * sValue); //total price
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+  }
+};
 //////////////////////////////////////////////////////////
 //corporate function
 //vars store values of options, emplace restrictions
 //if else statement for each product line selected?
-var corporate = function () {};
+var corporate = function () {
+  if (document.getElementById("standard").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+  }
+};
 //////////////////////////////////////////////////////////
 //hybrid function
 //vars store option values, restrictions, etc.
 //if else statement for each product line selected?
-var hybrid = function () {};
+var hybrid = function () {
+  if (document.getElementById("standard").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+  }
+};
 //////////////////////////////////////////////////////////
 //Ready Document
 // $(document).ready(function () {
