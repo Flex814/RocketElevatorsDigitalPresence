@@ -211,14 +211,44 @@ var corporate = function () {
 //vars store option values, restrictions, etc.
 //if else statement for each product line selected?
 var hybrid = function () {
+  var nbFloor = parseFloat(document.getElementById("nbFloors").value);
+  console.log("number floors " + nbFloor);
+  var nbBasement = parseFloat(document.getElementById("nbBasements").value);
+  console.log("number basements " + nbBasement);
+  var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
+  console.log("elevator cages " + elevatorCage);
+  var totalFloor = nbFloor + nbBasement;
+  console.log("total floor " + totalFloor);
+  var maxPerson = nbMax * totalFloor;
+  var nbElevators = maxPerson / 1000;
+  var nbColumns = totalFloor / 20;
+  var elevatorPerColumn = nbElevators / nbColumns;
+  var totalNbElevators = elevatorPerColumn * nbColumns;
   if (document.getElementById("standard").checked) {
+    var totalElevatorPrice = sValue * totalNbElevators;
+    var iFees = totalElevatorPrice * standard;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = sValue;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("premium").checked) {
+    var totalElevatorPrice = pValue * totalNbElevators;
+    var iFees = totalElevatorPrice * premium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = pValue;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("excelium").checked) {
+    var totalElevatorPrice = eValue * totalNbElevators;
+    var iFees = totalElevatorPrice * excelium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = eValue;
   }
+  document.getElementById("installationFees").value = iFees;
+  document.getElementById("unitPrice").value = unitPrice;
+  document.getElementById("numberElevators").value = nbElevators;
+  document.getElementById("totalPrice").value = totalElevatorPrice;
+  document.getElementById("finalPrice").value = finalPrice;
 };
 //////////////////////////////////////////////////////////
 //Ready Document
@@ -236,7 +266,7 @@ var hybrid = function () {
 
 //////////////////////////////////////////////////////////
 //alternate version of show/hide
-//longer, but easy to understand
+//longer, but easy to understand, not working anymore
 
 //   switch (true) {
 //     case $(this).val() == "Residential":
