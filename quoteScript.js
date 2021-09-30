@@ -30,40 +30,196 @@ var buildingSelect = function () {
 //make vars to store values of the options to use later with stated restrictions
 //if else statement for each product line selected?
 var residential = function () {
-  //get nbAppartment
+  //var section
+  //get number of apartments
   var nbAppartment = parseFloat(document.getElementById("nbApartments").value);
-  console.log(nbAppartment);
+  console.log(nbAppartment + " number of apartments");
 
-  //get nbFloor
+  //get number of floors
   var nbFloor = parseFloat(document.getElementById("nbFloors").value);
-  console.log(nbFloor);
+  console.log(nbFloor + " number of floors");
 
-  //calculate nbAppartment/nbFloor and store in var AvgPerFloor
+  //calculate average doors per floor
+  var avgPerFloor = Math.ceil(nbAppartment / nbFloor);
+  console.log(avgPerFloor + " average doors per floor");
 
-  //calc AvgPerFloor/6 for the amount of elevators needed
+  //calc number of elevators needed
+  var elevatorsNeeded = Math.ceil(avgPerFloor / 6);
 
-  //calc nbFloor / 20 to obtain nbElevatorShafts
+  //calc number of elevator columns
+  var nbElevatorColumns = Math.ceil(nbFloor / 20);
+  console.log("elevator columns is " + nbElevatorColumns);
   ////////////////////////////////////////////////////
+  //if else section
   //if standard is checked,
+  if (document.getElementById("standard").checked) {
+    console.log("standard is selected");
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbFloor > 20) {
+    //   elevatorsNeeded *= 2;
+    // }
+    console.log("elevators needed is " + elevatorsNeeded);
+    //price for elevator for standard
+    var elevatorPrice = sValue;
+    console.log("elevator price is " + elevatorPrice);
+    //if nbFloor > 20, multiply the (AvgPerFloor/6) by 2
+    //for total price of elevators
+    var totalPrice = parseFloat(elevatorsNeeded * sValue);
+    console.log("total price is " + totalPrice);
+
+    //installation fees
+    var iFees = totalPrice * standard;
+    console.log("install fee is " + iFees);
+
+    //final price
+    var finalPrice = totalPrice + iFees;
+    console.log("final price is " + finalPrice);
+
+    //////////////////////////////////////////////////////////
+    //if premium is checked,
+  } else if (document.getElementById("premium").checked) {
+    console.log("premium is selected");
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbFloor > 20) {
+    //   elevatorsDoubled = elevatorsNeeded * 2;
+    // }
+    var elevatorPrice = pValue;
+    var totalPrice = parseFloat(elevatorsNeeded * pValue);
+    var iFees = totalPrice * premium;
+    var finalPrice = totalPrice + iFees;
+  }
+  //if excelium is checked,
+  else if (document.getElementById("excelium").checked) {
+    console.log("excelium is selected");
+    elevatorsNeeded *= nbElevatorColumns;
+    // if (nbElevatorColumns > 20) {
+    //   elevatorsNeeded *= 2;
+    // }
+    var elevatorPrice = eValue;
+    var totalPrice = parseFloat(elevatorsNeeded * eValue);
+    var iFees = totalPrice * excelium;
+    var finalPrice = totalPrice + iFees;
+  }
+
   //if nbFloor > 20, multiply the (AvgPerFloor/6) by 2
-  //set price per elevator
-  //
+  //set unit price of each elevator
+  //set total price of elevators
+  //installation fees
+  //final price
+
+  document.getElementById("numberElevators").value = elevatorsNeeded;
+  document.getElementById("unitPrice").value = elevatorPrice;
+  document.getElementById("totalPrice").value = totalPrice;
+  document.getElementById("installationFees").value = iFees;
+  document.getElementById("finalPrice").value = finalPrice;
 };
 
 //////////////////////////////////////////////////////////
 //commercial function
 //if else statement for each product line selected?
-var commercial = function () {};
+var commercial = function () {
+  //////////////////////////////////////////////////////////
+  //var number of elevator cages to be deployed
+  var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
+  console.log(elevatorCage + " Elevator cages needed.");
+  if (document.getElementById("standard").checked) {
+    var elevatorsNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = sValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * sValue); //total price
+    var iFees = totalPrice * standard; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+    var elevatorsNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = pValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * pValue); //total price
+    var iFees = totalPrice * premium; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+    var elevatorsNeeded = elevatorCage; //elevator needed
+    var elevatorPrice = eValue; //elevator price
+    var totalPrice = parseFloat(elevatorsNeeded * eValue); //total price
+    var iFees = totalPrice * excelium; //installation fee
+    var finalPrice = totalPrice + iFees; //final price
+
+    document.getElementById("installationFees").value = iFees;
+    document.getElementById("unitPrice").value = elevatorPrice;
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("numberElevators").value = elevatorsNeeded;
+    document.getElementById("finalPrice").value = finalPrice;
+  }
+};
 //////////////////////////////////////////////////////////
 //corporate function
 //vars store values of options, emplace restrictions
 //if else statement for each product line selected?
-var corporate = function () {};
+var corporate = function () {
+  var nbFloor = parseFloat(document.getElementById("nbfloors").value);
+  var nbBasement = parseFloat(document.getElementById("nbBasements").value);
+  var nbMax = parseFloat(document.getElementById("nbMax").value); //people per floor
+  var totalFloor = nbFloor + nbBasement;
+  var maxPerson = nbMax * totalFloor;
+  var nbElevators = maxPerson / 1000;
+  var nbColumns = totalFloor / 20;
+  var elevatorPerColumn = nbElevators / nbColumns;
+  var totalNbElevators = elevatorPerColumn * nbColumns;
+
+  if (document.getElementById("standard").checked) {
+    var totalElevatorPrice = sValue * totalNbElevators;
+    var iFees = totalElevatorPrice * standard;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = sValue;
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+    var totalElevatorPrice = pValue * totalNbElevators;
+    var iFees = totalElevatorPrice * premium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = pValue;
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+    var totalElevatorPrice = eValue * totalNbElevators;
+    var iFees = totalElevatorPrice * excelium;
+    var finalPrice = totalElevatorPrice + iFees;
+    var unitPrice = eValue;
+  }
+  document.getElementById("installationFees").value = iFees;
+  document.getElementById("unitPrice").value = unitPrice;
+  document.getElementById("numberElevators").value = nbElevators;
+  document.getElementById("totalPrice").value = totalElevatorPrice;
+  document.getElementById("finalPrice").value = finalPrice;
+  /////////ERROR HERE
+};
 //////////////////////////////////////////////////////////
 //hybrid function
 //vars store option values, restrictions, etc.
 //if else statement for each product line selected?
-var hybrid = function () {};
+var hybrid = function () {
+  if (document.getElementById("standard").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("premium").checked) {
+  }
+  //////////////////////////////////////////////////////////
+  else if (document.getElementById("excelium").checked) {
+  }
+};
 //////////////////////////////////////////////////////////
 //Ready Document
 // $(document).ready(function () {
@@ -82,35 +238,35 @@ var hybrid = function () {};
 //alternate version of show/hide
 //longer, but easy to understand
 
+//   switch (true) {
+//     case $(this).val() == "Residential":
+//       $("#options").show();
+//       $("#number-of-companies").hide();
+//       $("#number-of-elevators").hide();
+//       $("#number-of-corporations").hide();
+//       $("#number-of-parking-spots").hide();
+//       $("#maximum-occupancy").hide();
+//       $("#business-hours").hide();
+//       break;
+//     case $(this).val() == "Commercial":
+//       $("#options").show();
+//       break;
+//     case $(this).val() == "Corporate":
+//       $("#options").show();
+//       break;
+//     case $(this).val() == "Hybrid":
+//       $("#options").show();
+//       $(".Uni").show();
+//       $("#number-of-apartments").hide();
+//       $("#number-of-elevators").hide();
+//       $("#number-of-corporations").hide();
+//       break;
+//     default:
+//       $("#options").hide();
+//   }
+//////////////////////////////////////////////////////////
+//If Else Version Alternate
 $("#buildingType").change(function () {
-  //   switch (true) {
-  //     case $(this).val() == "Residential":
-  //       $("#options").show();
-  //       $("#number-of-companies").hide();
-  //       $("#number-of-elevators").hide();
-  //       $("#number-of-corporations").hide();
-  //       $("#number-of-parking-spots").hide();
-  //       $("#maximum-occupancy").hide();
-  //       $("#business-hours").hide();
-  //       break;
-  //     case $(this).val() == "Commercial":
-  //       $("#options").show();
-  //       break;
-  //     case $(this).val() == "Corporate":
-  //       $("#options").show();
-  //       break;
-  //     case $(this).val() == "Hybrid":
-  //       $("#options").show();
-  //       $(".Uni").show();
-  //       $("#number-of-apartments").hide();
-  //       $("#number-of-elevators").hide();
-  //       $("#number-of-corporations").hide();
-  //       break;
-  //     default:
-  //       $("#options").hide();
-  //   }
-  //////////////////////////////////////////////////////////
-  //If Else Version Alternate
   if ($(this).val() == "Residential") {
     $("#options").show();
     $(".Uni").show();
