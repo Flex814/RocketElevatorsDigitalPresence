@@ -169,7 +169,7 @@ var commercial = function () {
 //vars store values of options, emplace restrictions
 //if else statement for each product line selected?
 var corporate = function () {
-  var nbFloor = parseFloat(document.getElementById("nbfloors").value);
+  var nbFloor = parseFloat(document.getElementById("nbFloors").value);
   var nbBasement = parseFloat(document.getElementById("nbBasements").value);
   var nbMax = parseFloat(document.getElementById("nbMax").value); //people per floor
   var totalFloor = nbFloor + nbBasement;
@@ -212,14 +212,14 @@ var corporate = function () {
 //if else statement for each product line selected?
 var hybrid = function () {
   var nbFloor = parseFloat(document.getElementById("nbFloors").value);
-  console.log("number floors " + nbFloor);
+  // console.log("number floors " + nbFloor);
   var nbBasement = parseFloat(document.getElementById("nbBasements").value);
-  console.log("number basements " + nbBasement);
+  // console.log("number basements " + nbBasement);
   var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
   console.log("elevator cages " + elevatorCage);
   var totalFloor = nbFloor + nbBasement;
-  console.log("total floor " + totalFloor);
-  var maxPerson = nbMax * totalFloor;
+  // console.log("total floor " + totalFloor);
+  var maxPerson = elevatorCage * totalFloor;
   var nbElevators = maxPerson / 1000;
   var nbColumns = totalFloor / 20;
   var elevatorPerColumn = nbElevators / nbColumns;
