@@ -100,13 +100,21 @@ var residential = function () {
     var iFees = totalPrice * excelium;
     var finalPrice = totalPrice + iFees;
   }
-
-  //if nbFloor > 20, multiply the (AvgPerFloor/6) by 2
-  //set unit price of each elevator
-  //set total price of elevators
-  //installation fees
-  //final price
-
+  //currency conversion
+  iFees = iFees.toLocaleString("en", { style: "currency", currency: "USD" });
+  elevatorPrice = elevatorPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  totalPrice = totalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  finalPrice = finalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  //output
   document.getElementById("numberElevators").value = elevatorsNeeded;
   document.getElementById("unitPrice").value = elevatorPrice;
   document.getElementById("totalPrice").value = totalPrice;
@@ -128,12 +136,6 @@ var commercial = function () {
     var totalPrice = parseFloat(elevatorsNeeded * sValue); //total price
     var iFees = totalPrice * standard; //installation fee
     var finalPrice = totalPrice + iFees; //final price
-
-    document.getElementById("installationFees").value = iFees;
-    document.getElementById("unitPrice").value = elevatorPrice;
-    document.getElementById("totalPrice").value = totalPrice;
-    document.getElementById("numberElevators").value = elevatorsNeeded;
-    document.getElementById("finalPrice").value = finalPrice;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("premium").checked) {
@@ -142,12 +144,6 @@ var commercial = function () {
     var totalPrice = parseFloat(elevatorsNeeded * pValue); //total price
     var iFees = totalPrice * premium; //installation fee
     var finalPrice = totalPrice + iFees; //final price
-
-    document.getElementById("installationFees").value = iFees;
-    document.getElementById("unitPrice").value = elevatorPrice;
-    document.getElementById("totalPrice").value = totalPrice;
-    document.getElementById("numberElevators").value = elevatorsNeeded;
-    document.getElementById("finalPrice").value = finalPrice;
   }
   //////////////////////////////////////////////////////////
   else if (document.getElementById("excelium").checked) {
@@ -156,13 +152,27 @@ var commercial = function () {
     var totalPrice = parseFloat(elevatorsNeeded * eValue); //total price
     var iFees = totalPrice * excelium; //installation fee
     var finalPrice = totalPrice + iFees; //final price
-
-    document.getElementById("installationFees").value = iFees;
-    document.getElementById("unitPrice").value = elevatorPrice;
-    document.getElementById("totalPrice").value = totalPrice;
-    document.getElementById("numberElevators").value = elevatorsNeeded;
-    document.getElementById("finalPrice").value = finalPrice;
   }
+  //set vals as usd
+  iFees = iFees.toLocaleString("en", { style: "currency", currency: "USD" });
+  elevatorPrice = elevatorPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  totalPrice = totalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  finalPrice = finalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  //output
+  document.getElementById("installationFees").value = iFees;
+  document.getElementById("unitPrice").value = elevatorPrice;
+  document.getElementById("totalPrice").value = totalPrice;
+  document.getElementById("numberElevators").value = elevatorsNeeded;
+  document.getElementById("finalPrice").value = finalPrice;
 };
 //////////////////////////////////////////////////////////
 //corporate function
@@ -199,12 +209,26 @@ var corporate = function () {
     var finalPrice = totalElevatorPrice + iFees;
     var unitPrice = eValue;
   }
+  //set vals as usd
+  iFees = iFees.toLocaleString("en", { style: "currency", currency: "USD" });
+  unitPrice = unitPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  totalElevatorPrice = totalElevatorPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  finalPrice = finalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  //output
   document.getElementById("installationFees").value = iFees;
   document.getElementById("unitPrice").value = unitPrice;
   document.getElementById("numberElevators").value = nbElevators;
   document.getElementById("totalPrice").value = totalElevatorPrice;
   document.getElementById("finalPrice").value = finalPrice;
-  /////////ERROR HERE
 };
 //////////////////////////////////////////////////////////
 //hybrid function
@@ -215,11 +239,11 @@ var hybrid = function () {
   // console.log("number floors " + nbFloor);
   var nbBasement = parseFloat(document.getElementById("nbBasements").value);
   // console.log("number basements " + nbBasement);
-  var elevatorCage = parseFloat(document.getElementById("nbElevators").value);
-  console.log("elevator cages " + elevatorCage);
+  var nbMax = parseFloat(document.getElementById("nbMax").value);
+  //console.log("people per floor " + nbMax);
   var totalFloor = nbFloor + nbBasement;
   // console.log("total floor " + totalFloor);
-  var maxPerson = elevatorCage * totalFloor;
+  var maxPerson = nbMax * totalFloor;
   var nbElevators = maxPerson / 1000;
   var nbColumns = totalFloor / 20;
   var elevatorPerColumn = nbElevators / nbColumns;
@@ -244,6 +268,21 @@ var hybrid = function () {
     var finalPrice = totalElevatorPrice + iFees;
     var unitPrice = eValue;
   }
+  //set vals to USD
+  iFees = iFees.toLocaleString("en", { style: "currency", currency: "USD" });
+  unitPrice = unitPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  totalElevatorPrice = totalElevatorPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  finalPrice = finalPrice.toLocaleString("en", {
+    style: "currency",
+    currency: "USD",
+  });
+  //output
   document.getElementById("installationFees").value = iFees;
   document.getElementById("unitPrice").value = unitPrice;
   document.getElementById("numberElevators").value = nbElevators;
