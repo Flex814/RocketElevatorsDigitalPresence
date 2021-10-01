@@ -55,9 +55,6 @@ var residential = function () {
   if (document.getElementById("standard").checked) {
     console.log("standard is selected");
     elevatorsNeeded *= nbElevatorColumns;
-    // if (nbFloor > 20) {
-    //   elevatorsNeeded *= 2;
-    // }
     console.log("elevators needed is " + elevatorsNeeded);
     //price for elevator for standard
     var elevatorPrice = sValue;
@@ -92,9 +89,7 @@ var residential = function () {
   else if (document.getElementById("excelium").checked) {
     console.log("excelium is selected");
     elevatorsNeeded *= nbElevatorColumns;
-    // if (nbElevatorColumns > 20) {
-    //   elevatorsNeeded *= 2;
-    // }
+
     var elevatorPrice = eValue;
     var totalPrice = parseFloat(elevatorsNeeded * eValue);
     var iFees = totalPrice * excelium;
@@ -124,7 +119,6 @@ var residential = function () {
 
 //////////////////////////////////////////////////////////
 //commercial function
-//if else statement for each product line selected?
 var commercial = function () {
   //////////////////////////////////////////////////////////
   //var number of elevator cages to be deployed
@@ -177,7 +171,6 @@ var commercial = function () {
 //////////////////////////////////////////////////////////
 //corporate function
 //vars store values of options, emplace restrictions
-//if else statement for each product line selected?
 var corporate = function () {
   var nbFloor = parseFloat(document.getElementById("nbFloors").value);
   var nbBasement = parseFloat(document.getElementById("nbBasements").value);
@@ -186,7 +179,9 @@ var corporate = function () {
   var maxPerson = nbMax * totalFloor;
   var nbElevators = maxPerson / 1000;
   var nbColumns = totalFloor / 20;
+  var nbColumns = Math.ceil(nbColumns);
   var elevatorPerColumn = nbElevators / nbColumns;
+  var elevatorPerColumn = Math.ceil(elevatorPerColumn);
   var totalNbElevators = elevatorPerColumn * nbColumns;
 
   if (document.getElementById("standard").checked) {
@@ -226,28 +221,34 @@ var corporate = function () {
   //output
   document.getElementById("installationFees").value = iFees;
   document.getElementById("unitPrice").value = unitPrice;
-  document.getElementById("numberElevators").value = nbElevators;
+  document.getElementById("numberElevators").value = totalNbElevators;
   document.getElementById("totalPrice").value = totalElevatorPrice;
   document.getElementById("finalPrice").value = finalPrice;
 };
 //////////////////////////////////////////////////////////
 //hybrid function
 //vars store option values, restrictions, etc.
-//if else statement for each product line selected?
 var hybrid = function () {
   var nbFloor = parseFloat(document.getElementById("nbFloors").value);
-  // console.log("number floors " + nbFloor);
+  console.log("number floors " + nbFloor);
   var nbBasement = parseFloat(document.getElementById("nbBasements").value);
-  // console.log("number basements " + nbBasement);
+  console.log("number basements " + nbBasement);
   var nbMax = parseFloat(document.getElementById("nbMax").value);
-  //console.log("people per floor " + nbMax);
+  console.log("people per floor " + nbMax);
   var totalFloor = nbFloor + nbBasement;
-  // console.log("total floor " + totalFloor);
+  console.log("total floor " + totalFloor);
   var maxPerson = nbMax * totalFloor;
+  console.log("max occupancy is " + maxPerson);
   var nbElevators = maxPerson / 1000;
+  console.log("elevators required = " + nbElevators);
   var nbColumns = totalFloor / 20;
+  var nbColumns = Math.ceil(nbColumns);
+  console.log("columns required is " + nbColumns);
   var elevatorPerColumn = nbElevators / nbColumns;
+  var elevatorPerColumn = Math.ceil(elevatorPerColumn);
+  console.log("elevators/columns, rounded up " + elevatorPerColumn);
   var totalNbElevators = elevatorPerColumn * nbColumns;
+  console.log("final amount of elevators " + totalNbElevators);
   if (document.getElementById("standard").checked) {
     var totalElevatorPrice = sValue * totalNbElevators;
     var iFees = totalElevatorPrice * standard;
@@ -283,57 +284,16 @@ var hybrid = function () {
     currency: "USD",
   });
   //output
+  console.log("Done...............................................");
   document.getElementById("installationFees").value = iFees;
   document.getElementById("unitPrice").value = unitPrice;
-  document.getElementById("numberElevators").value = nbElevators;
+  document.getElementById("numberElevators").value = totalNbElevators;
   document.getElementById("totalPrice").value = totalElevatorPrice;
   document.getElementById("finalPrice").value = finalPrice;
 };
 //////////////////////////////////////////////////////////
 //Ready Document
-// $(document).ready(function () {
-//   //should initially hide every option.
-//   $(".options").hide();
-//   //should hide all options except that with class of selected buildingType
-//   $("#buildingType").change(function () {
-//     //$(".options").hide();
-//     $(".options." + $(this).val()).show();
-//   });
-//   //Is not working rn, but maybe need to finish rest of code first.
-//   // input value of radiobutton into variable
-// });
 
-//////////////////////////////////////////////////////////
-//alternate version of show/hide
-//longer, but easy to understand, not working anymore
-
-//   switch (true) {
-//     case $(this).val() == "Residential":
-//       $("#options").show();
-//       $("#number-of-companies").hide();
-//       $("#number-of-elevators").hide();
-//       $("#number-of-corporations").hide();
-//       $("#number-of-parking-spots").hide();
-//       $("#maximum-occupancy").hide();
-//       $("#business-hours").hide();
-//       break;
-//     case $(this).val() == "Commercial":
-//       $("#options").show();
-//       break;
-//     case $(this).val() == "Corporate":
-//       $("#options").show();
-//       break;
-//     case $(this).val() == "Hybrid":
-//       $("#options").show();
-//       $(".Uni").show();
-//       $("#number-of-apartments").hide();
-//       $("#number-of-elevators").hide();
-//       $("#number-of-corporations").hide();
-//       break;
-//     default:
-//       $("#options").hide();
-//   }
-//////////////////////////////////////////////////////////
 //If Else Version Alternate
 $("#buildingType").change(function () {
   if ($(this).val() == "Residential") {
