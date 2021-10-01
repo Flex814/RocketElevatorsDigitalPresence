@@ -48,3 +48,7 @@ Home Stretch!!!! Show/Hide is working, just not pretty. Function for Residential
 
 9/30/21:
 Finished both Residential and Commercial building types. Going to finish the other two, Deploy website today, then work out bugs and smaller issues.
+
+10/1/21:
+Last Day!!! Site is uploaded. All that is left is to fix one var that is returning NaN, one function having incorrect math for example 2, and to implement dollar sign/commas for output readonly!
+(Update 1): Fixed all incorrect math and rounding, implemented currency, fixed NaN bug. Will update deployment now.
