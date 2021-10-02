@@ -6,6 +6,23 @@ var standard = 0.1,
   excelium = 0.16;
 //NEED TO PARSE THROUGH AND STORE IN VAR FOR LATER//
 //////////////////////////////////////////////////////////
+//function to reset numbers after buildingtype change
+function myReset() {
+  document.getElementById("nbBasements").value = 0;
+  document.getElementById("nbApartments").value = 0;
+  document.getElementById("nbFloors").value = 0;
+  document.getElementById("nbParking").value = 0;
+  document.getElementById("nbCompanies").value = 0;
+  document.getElementById("nbElevators").value = 0;
+  document.getElementById("nbCorporations").value = 0;
+  document.getElementById("nbMax").value = 0;
+  document.getElementById("nbHours").value = 0;
+  document.getElementById("installationFees").value = 0;
+  document.getElementById("unitPrice").value = 0;
+  document.getElementById("numberElevators").value = 0;
+  document.getElementById("totalPrice").value = 0;
+  document.getElementById("finalPrice").value = 0;
+}
 
 //get value of each radio button for use in following functions. saves time later
 var sValue = parseFloat(document.getElementById("standard").value);
@@ -306,6 +323,7 @@ $("#buildingType").change(function () {
     $("#number-of-parking-spots").hide();
     $("#maximum-occupancy").hide();
     $("#business-hours").hide();
+    myReset();
   } else if ($(this).val() == "Commercial") {
     $("#options").show();
     $(".Uni").show();
@@ -316,6 +334,7 @@ $("#buildingType").change(function () {
     $("#number-of-elevators").show();
     $("#number-of-corporations").hide();
     $("#number-of-apartments").hide();
+    myReset();
   } else if ($(this).val() == "Corporate") {
     $("#options").show();
     $(".Uni").show();
@@ -327,6 +346,7 @@ $("#buildingType").change(function () {
     $("#number-of-corporations").show();
     $("#number-of-apartments").hide();
     $("#number-of-elevators").hide();
+    myReset();
   } else if ($(this).val() == "Hybrid") {
     $("#options").show();
     $(".Uni").show();
@@ -338,6 +358,7 @@ $("#buildingType").change(function () {
     $("#number-of-corporations").hide();
     $("#number-of-apartments").hide();
     $("#number-of-elevators").hide();
+    myReset();
   } else {
     $("#options").hide();
   }
@@ -345,3 +366,4 @@ $("#buildingType").change(function () {
 $("#buildingType").trigger("change");
 
 //////////////////////////////////////////////////////////
+$("input:radio").prop("checked", false);
